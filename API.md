@@ -8,7 +8,6 @@
 | API Endpoint              | HTTP Method |
 | ------------------------- | :---------: |
 | [/login]()              |   `GET`    |
-|                           |             |
 
 #### Request Body
 ```json
