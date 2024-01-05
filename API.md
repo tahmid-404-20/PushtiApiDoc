@@ -198,7 +198,7 @@ Response Code: 200 (`OK`)
     "name": "string",
     "dob": "02-02-2000",
     "address": "string",
-    "mobile": 012345678901
+    "mobile": 123456789
 }
 ```
 ### Success 
