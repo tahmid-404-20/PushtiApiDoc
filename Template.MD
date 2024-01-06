@@ -4,9 +4,13 @@
 
 ### Dashboard
 
-#### API Endpoint: `/farmer/{id}/dashboard`
+#### API Endpoint: [/farmer/{id}/dashboard]()
 
 #### HTTP Method: `GET`
+
+| API Endpoint              | HTTP Method |
+| ------------------------- | :---------: |
+| [/farmer/{id}/dashboard]() |   `GET`     |
 
 >### Request
 >
@@ -21,6 +25,7 @@
 >Or just use N/A like this
 >
 >#### Request Body : N/A
+
 </br>
 
 >### Response
@@ -79,4 +84,3 @@
 >       ]
 >   }
 >    ```
-
