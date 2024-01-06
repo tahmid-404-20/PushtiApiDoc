@@ -21,8 +21,6 @@
 >Or just use N/A like this
 >
 >#### Request Body : N/A
->
-></br>
 </br>
 
 >### Response
@@ -81,5 +79,4 @@
 >       ]
 >   }
 >    ```
->
-> </br>
+
