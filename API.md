@@ -11,56 +11,71 @@
 | ------------------------- | :---------: |
 | [/login]()                |   `GET`     |
 
-#### Request Body
-```json
-{
+>### Request
+>#### Request Body
+>```json
+>{
+>
+>}
+>```
+<br>
 
-}
-```
-Response Code: 200 (`OK`)
-
-#### Response Body
-```json
-{
-    "accountTypes": ["string"]
-}
-```
+>### Response
+>#### Response Code: 200 (`OK`)
+>
+>#### Response Body
+>```json
+>{
+>    "accountTypes": ["string"]
+>}
+>```
 ------------------
+<br>
 
 | API Endpoint              | HTTP Method |
 | ------------------------- | :---------: |
 | [/login/validate]()       |   `POST`     |
 
-#### Request Body
-```json
-{
-    "accountType": "string",
-    "id": 123,
-    "password": "string"
-}
-```
-### Success 
-Response Code: 200 (`OK`)
+>### Request
+>#### Request Body
+>```json
+>{
+>    "accountType": "string",
+>    "id": 123,
+>    "password": "string"
+>}
+>```
+<br>
 
-#### Response Body
-```json
-{
-    "success": true,
-    "redirectURL": "string",
-    "token": "string"
-}
-```
-### Wrong ID or Password
-Response Code: 401 (`Unauthorized`)
+>### Response - Success 
+>#### Response Code: 200 (`OK`)
+>
+>#### Response Body
+>```json
+>{
+>    "success": true,
+>    "redirectURL": "string",
+>    "token": "string"
+>}
+>```
+<br>
 
-#### Response Body
-```json
-{
-    "success": false,
-    "error": "Invalid ID or password"
-}
-```
+> [!NOTE]
+> Subsequent requests while logged in must contain this token.
+<br>
+
+>### Response - Wrong ID or Password
+>#### Response Code: 401 (`Unauthorized`)
+>
+>#### Response Body
+>```json
+>{
+>    "success": false,
+>    "error": "Invalid ID or password"
+>}
+>```
 -------------
+<br>
 
 ## Register
 
@@ -68,158 +83,196 @@ Response Code: 401 (`Unauthorized`)
 | ------------------------- | :---------: |
 | [/register]()                |   `GET`     |
 
-#### Request Body
-```json
-{
+>### Request
+>#### Request Body
+>```json
+>{
+>
+>}
+>```
+<br>
 
-}
-```
-Response Code: 200 (`OK`)
-
-#### Response Body
-```json
-{
-    "redirectURL": "/register/farmer"
-}
-```
+>### Response
+>#### Response Code: 200 (`OK`)
+>
+>#### Response Body
+>```json
+>{
+>    "redirectURL": "/register/farmer"
+>}
+>```
 ---------------
+<br>
 
 | API Endpoint              | HTTP Method |
 | ------------------------- | :---------: |
 | [/register/farmer]()                |   `GET`     |
 
-#### Request Body
-```json
-{
+>### Request
+>#### Request Body
+>```json
+>{
+>
+>}
+>```
+<br>
 
-}
-```
-Response Code: 200 (`OK`)
-
-#### Response Body
-```json
-{
-    "farmerTypes": ["string"],
-    "divisions": ["string"]
-}
-```
+>### Response
+>#### Response Code: 200 (`OK`)
+>
+>#### Response Body
+>```json
+>{
+>    "farmerTypes": ["string"],
+>    "divisions": ["string"]
+>}
+>```
 -------------
+<br>
 
 | API Endpoint              | HTTP Method |
 | ------------------------- | :---------: |
 | [/register/sme]()                |   `GET`     |
 | [/register/vendor]()       |    `GET`    |
 
-#### Request Body
-```json
-{
+>### Request
+>#### Request Body
+>```json
+>{
+>
+>}
+>```
+<br>
 
-}
-```
-Response Code: 200 (`OK`)
-
-#### Response Body
-```json
-{
-    "divisions": ["string"]
-}
-```
+>### Response
+>#### Response Code: 200 (`OK`)
+>
+>#### Response Body
+>```json
+>{
+>    "divisions": ["string"]
+>}
+>```
 -----------------
+<br>
 
 | API Endpoint              | HTTP Method |
 | ------------------------- | :---------: |
 | [/register/division]()                |   `POST`     |
 
-#### Request Body
-```json
-{
-    "division": "string"
-}
-```
-Response Code: 200 (`OK`)
+>### Request
+>#### Request Body
+>```json
+>{
+>    "division": "string"
+>}
+>```
+<br>
 
-#### Response Body
-```json
-{
-    "districts": ["string"]
-}
-```
+>### Response
+>#### Response Code: 200 (`OK`)
+>
+>#### Response Body
+>```json
+>{
+>    "districts": ["string"]
+>}
+>```
 ---------------------
+<br>
 
 | API Endpoint              | HTTP Method |
 | ------------------------- | :---------: |
 | [/register/district]()                |   `POST`     |
 
-#### Request Body
-```json
-{
-    "district": "string"
-}
-```
-Response Code: 200 (`OK`)
+>### Request
+>#### Request Body
+>```json
+>{
+>    "district": "string"
+>}
+>```
+<br>
 
-#### Response Body
-```json
-{
-    "upazillas": ["string"]
-}
-```
+>### Response
+>#### Response Code: 200 (`OK`)
+>
+>#### Response Body
+>```json
+>{
+>    "upazillas": ["string"]
+>}
+>```
 -----------------
+<br>
+
 | API Endpoint              | HTTP Method |
 | ------------------------- | :---------: |
 | [/register/upazilla]()                |   `POST`     |
 
-#### Request Body
-```json
-{
-    "upazilla": "string"
-}
-```
-Response Code: 200 (`OK`)
+>### Request
+>#### Request Body
+>```json
+>{
+>    "upazilla": "string"
+>}
+>```
+<br>
 
-#### Response Body
-```json
-{
-    "unions": ["string"]
-}
-```
+>### Response
+>#### Response Code: 200 (`OK`)
+>
+>#### Response Body
+>```json
+>{
+>    "unions": ["string"]
+>}
+>```
 ------------------
+<br>
 
 | API Endpoint              | HTTP Method |
 | ------------------------- | :---------: |
 | [/register/submit]()                |   `POST`     |
 
-#### Request Body
-```json
-{
-    "accountType": "string",
-    "farmerType": "string",
-    "nid": 1234567890,
-    "name": "string",
-    "dob": "02-02-2000",
-    "address": "string",
-    "mobile": 123456789
-}
-```
-### Success 
-Response Code: 200 (`OK`)
+>### Request
+>#### Request Body
+>```json
+>{
+>    "accountType": "string",
+>    "farmerType": "string",
+>    "nid": 1234567890,
+>    "name": "string",
+>    "dob": "02-02-2000",
+>    "address": "string",
+>    "mobile": 123456789
+>}
+>```
+<br>
 
-#### Response Body
-```json
-{
-    "success": true,
-    "redirectURL": "string",
-    "token": "string"
-}
-```
-### Invalid Input
-Response Code: 422 (`Unprocessable Entity`)
 
-#### Response Body
-```json
-{
-    "success": false,
-    "error": "Invalid {field}"
-}
-```
+>### Response - Success 
+>#### Response Code: 200 (`OK`)
+>
+>#### Response Body
+>```json
+>{
+>    "success": true,
+>    "redirectURL": "string",
+>    "token": "string"
+>}
+>```
+<br>
+
+>### Response - Invalid Input
+>#### Response Code: 422 (`Unprocessable Entity`)
+>
+>#### Response Body
+>```json
+>{
+>    "success": false,
+>    "error": "Invalid {field}"
+>}
+>```
 -----------
+<br>
