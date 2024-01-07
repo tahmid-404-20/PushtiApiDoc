@@ -43,7 +43,7 @@
 >       "Sales History": [
 >           {
 >               "tid": 123456789,    
->               "date": new Date('2022-10-31T11:00:00Z'),
+>               "date": "2022-10-31T11:00:00Z",
 >               "amount": 1000,
 >               "Objects": [
 >                   {
@@ -56,7 +56,7 @@
 >           },
 >           {
 >               "tid": 123456789,
->               "date": new Date('2022-10-31T15:00:00Z'),
+>               "date": "2022-10-31T11:00:00Z",
 >               "amount": 1500,
 >               "Objects": [
 >                   {
@@ -71,7 +71,7 @@
 >       "Buy History": [
 >           {
 >               "tid": 123456789,    
->               "date": new Date('2022-10-31T09:00:00Z'),
+>               "date": "2022-10-31T11:00:00Z",
 >               "amount": 1000,
 >               "Objects": [
 >                   {
@@ -84,7 +84,7 @@
 >           },
 >           {
 >               "tid": 123456789,
->               "date": new Date('2022-10-31T09:00:00Z'),
+>               "date": "2022-10-31T11:00:00Z",
 >               "amount": 500,
 >               "Objects": [
 >                   {
@@ -130,24 +130,24 @@
 >    ```json
 >   {
 >       "active loan":  {
->           "start date": new Date('2022-10-31T09:00:00Z'),    
+>           "start date": "2022-10-31T11:00:00Z",    
 >           "amount": 10000,
 >           "remaining": 5000,
 >           "interest": 10,
->           "status": active,
+>           "status": "active",
 >       },
 >       "loan history": [
 >           {
->               "start date": new Date('2022-10-31T09:00:00Z'),
->               "end date": new Date('2022-10-31T09:00:00Z'),
+>               "start date": "2022-10-31T11:00:00Z",
+>               "end date": "2022-10-31T11:00:00Z",
 >               "amount": 10000,
->               "status": completed
+>               "status": "completed"
 >           },
 >           {
->               "start date": new Date('2022-10-31T09:00:00Z'),
->               "end date": new Date('2022-10-31T09:00:00Z'),
+>               "start date": "2022-10-31T11:00:00Z",
+>               "end date": "2022-10-31T11:00:00Z",
 >               "amount": 15000,
->               "status": rejected
+>               "status": "rejected"
 >           }
 >       ]
 >   }
@@ -239,7 +239,7 @@
 >       "Buy History": [
 >           {
 >               "tid": 123456789,    
->               "date": new Date('2022-10-31T09:00:00Z'),
+>               "date": "2022-10-31T11:00:00Z",
 >               "amount": 1000,
 >               "Objects": [
 >                   {
@@ -252,7 +252,7 @@
 >           },
 >           {
 >               "tid": 123456789,
->               "date": new Date('2022-10-31T09:00:00Z'),
+>               "date": "2022-10-31T11:00:00Z",
 >               "amount": 500,
 >               "Objects": [
 >                   {
@@ -267,7 +267,7 @@
 >       "Pending Requests": [
 >           {
 >               "tid": 123456789,    
->               "date": new Date('2022-10-31T09:00:00Z'),
+>               "date": "2022-10-31T11:00:00Z",
 >               "amount": 1000,
 >               "Objects": [
 >                   {
@@ -279,7 +279,7 @@
 >           },
 >           {
 >               "tid": 123456789,
->               "date": new Date('2022-10-31T09:00:00Z'),
+>               "date": "2022-10-31T11:00:00Z",
 >               "amount": 500,
 >               "Objects": [
 >                   {
@@ -379,7 +379,7 @@
 >       "Sell History": [
 >           {
 >               "tid": 123456789,    
->               "date": new Date('2022-10-31T09:00:00Z'),
+>               "date": "2022-10-31T11:00:00Z",
 >               "amount": 1000,
 >               "Objects": [
 >                   {
@@ -392,7 +392,7 @@
 >           },
 >           {
 >               "tid": 123456789,
->               "date": new Date('2022-10-31T09:00:00Z'),
+>               "date": "2022-10-31T11:00:00Z",
 >               "amount": 500,
 >               "Objects": [
 >                   {
@@ -407,7 +407,7 @@
 >       "Pending Requests": [
 >           {
 >               "tid": 123456789,    
->               "date": new Date('2022-10-31T09:00:00Z'),
+>               "date": "2022-10-31T11:00:00Z",
 >               "amount": 1000,
 >               "Objects": [
 >                   {
@@ -419,7 +419,7 @@
 >           },
 >           {
 >               "tid": 123456789,
->               "date": new Date('2022-10-31T09:00:00Z'),
+>               "date": "2022-10-31T11:00:00Z",
 >               "amount": 500,
 >               "Objects": [
 >                   {
@@ -568,14 +568,14 @@
 >   [
 >       {
 >           "ticketId": 123456789,
->           "date": new Date('2022-10-31T09:00:00Z'),
+>           "date": "2022-10-31T11:00:00Z",
 >           "status": "Pending",
 >           "subject": "Buy Request Cancelled",
 >           "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Convallis tellus id interdum velit laoreet. Enim eu turpis egestas pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
 >       },
 >       {
 >           "ticketId": 123456789,
->          "date": new Date('2022-10-31T09:00:00Z'),
+>          "date": "2022-10-31T09:00:00Z",
 >           "status": "Resolved",
 >           "subject": "Buy Request Cancelled",
 >           "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Convallis tellus id interdum velit laoreet. Enim eu turpis egestas pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
