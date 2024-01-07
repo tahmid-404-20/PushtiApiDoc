@@ -435,7 +435,7 @@
 >           {
 >               "tid": 123456789,    
 >               "date": "2022-10-31T11:00:00Z",
->               "farmer": "John Doe",
+>               "sme": "Dolores Sitamet",
 >               "avatar": "avatar23.png",
 >               "total": 1000,
 >               "Objects": [
@@ -455,7 +455,7 @@
 >           {
 >               "tid": 123456789,    
 >               "date": "2022-10-31T11:00:00Z",
->               "farmer": "John Doe",
+>               "farmer": "Lorem Ipsum",
 >               "avatar": "avatar44.png",
 >               "total": 10023,
 >               "Objects": [
@@ -478,7 +478,7 @@
 >           {
 >               "tid": 123456789,    
 >               "date": "2022-10-31T11:00:00Z",
->               "farmer": "John Doe",
+>               "farmer": "Doe",
 >               "avatar": "avatar23.png",
 >               "total": 1000,
 >               "Objects": [
@@ -498,7 +498,7 @@
 >           {
 >               "tid": 123456789,    
 >               "date": "2022-10-31T11:00:00Z",
->               "farmer": "John Doe",
+>               "farmer": "John",
 >               "avatar": "avatar44.png",
 >               "total": 10023,
 >               "Objects": [
@@ -527,7 +527,7 @@
 
 | API Endpoint             | HTTP Method |
 | ------------------------ | :---------: |
-| [/agent/buy/farmer/products]() |   `GET`    |
+| [/agent/transaction/farmer/buy]() |   `GET`    |
 
 > ### Request
 >
@@ -547,6 +547,22 @@
 >
 > ```json
 > {
+>   "farmers": [
+>       {
+>           "farmer_id" : 12345667,
+>           "name": "Lorem Ipsum",
+>           "avatar": "avatar23.png",
+>           "type": "Dairy",
+>           "address": "Lorem Sitame",
+>        },
+>       {
+>           "farmer_id" : 12345669,
+>           "name": "Loremis Opiumis",
+>           "avatar": "avatar23.png",
+>           "type": "Dairy",
+>           "address": "Lorem ame",
+>        },
+>       ],
 >   "products": [
 >       {
 >           "id" : 23,
@@ -563,11 +579,11 @@
 > ```
 
 
-#### When new product is added
+#### Adding new products to buy request
 
 | API Endpoint             | HTTP Method |
 | ------------------------ | :---------: |
-| [/agent/buy/farmer/add]() |   `POST`    |
+| [/agent/transaction/farmer/buy/add]() |   `POST`    |
 
 > ### Request
 >
@@ -623,10 +639,11 @@
 </br>
 
 
-#### Buying product from farmer
+#### Buy request to farmer
+
 | API Endpoint             | HTTP Method |
 | ------------------------ | :---------: |
-| [/agent/buy/farmer/request]() |   `POST`    |
+| [/agent/transaction/farmer/buy/request]() |   `POST`    |
 
 > ### Request
 >
