@@ -1326,3 +1326,83 @@
 </br>
 
 ---
+
+## Support
+
+| API Endpoint             | HTTP Method |
+| ------------------------ | :---------: |
+| [/agent/support]() |   `GET`    |
+
+> ### Request
+>
+> #### Request Body
+>
+> ```json
+> {
+>
+> }
+> ```
+
+</br>
+
+> ### Response - Success
+>
+> #### Response Code : 200 (`OK`)
+>
+> #### Response Body
+>
+> ```json
+> {
+>   "prev_tickets": [
+>       {   
+>           "date": "2022-10-31T11:00:00Z",
+>           "subject": "Lorem Ipsum Doroles",
+>           "message_body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incid idunt utlabore et dolore magna aliqua. Vel quam elementum pulvinar etiam. At auctor urna nunc id cursus metus aliquam",
+>           "status": "Resolved",
+>       },
+>       {   
+>           "date": "2023-01-01T11:00:00Z",
+>           "subject": "Lorem Ipsum",
+>           "message_body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incid idunt utlabore et dolore magna aliqua. Vel quam elementum pulvinar etiam. At auctor urna nunc id cursus metus aliquam",
+>           "status": "Pending",
+>       },
+>   ],
+> }
+> ```
+
+</br>
+
+### New Ticket
+
+
+| API Endpoint             | HTTP Method |
+| ------------------------ | :---------: |
+| [/agent/support/send]() |   `POST`    |
+
+> ### Request
+>
+> #### Request Body
+>
+> ```json
+> {
+>   "subject": "Lorem Ipsum",
+>   "message_body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incid idunt utlabore et dolore magna aliqua. Vel quam elementum pulvinar etiam. At auctor urna nunc id cursus metus aliquam",
+> }
+> ```
+
+> ### Response - Success
+>
+> #### Response Code : 200 (`OK`)
+>
+> #### Response Body
+>
+> ```json
+> {
+>   "success": true,
+>   "message": "Ticket sent successfully"
+> }
+> ```
+
+
+
+</br>
