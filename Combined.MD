@@ -10,7 +10,7 @@
 
 ## Index
 
-1. [Register/ Login Module](#register/login-module)
+1. [Register/ Login Module](#registerlogin-module)
     1. [Login](#login)
     2. [Login Validation](#login-validate)
     3. [Register](#register)
@@ -19,8 +19,82 @@
         - [Get District List For Divisions](#get-district-list-for-divisions)
         - [Get Upazilla List For District](#get-upazilla-list-for-district)
         - [Get Union List For Upazilla](#get-union-list-for-upazilla)
-    4. [Submit Registration Request](https://github.com/Shattik/PushtiApiDoc/blob/master/Combined.MD#submit-registration-request)
-2. []
+    4. [Submit Registration Request](#submit-registration-request)
+2. [Agent Module](#agent-module)
+    1. [Agent Dashboard](#agent-dashboard)
+    2. [Loan Requests](#loan-requests)
+    3. [Respond to Loan Requests](#respond-to-loan-request)
+        - [Go to Next Stage](#for-next-stage)
+        - [Accept Loan (Final Stage)](#for-acceptance-final-stage)
+    4. [Agent Transaction History](#agent-transaction-history)
+        - [Transaction History of Farmers](#transaction-history-of-farmers)
+        - [Transaction History of Vendors](#transaction-history-of-vendors)
+        - [Transaction History of SMEs](#transaction-history-of-smes)
+    5. [New Transaction](#new-transaction)
+        - [New Transaction For Farmers](#new-transaction-for-farmers)
+            - [Initiating Buy Request](#initiating-buy-request)
+            - [Adding new products to buy request](#adding-new-products-to-buy-request)
+            - [Buy request to farmer](#buy-request-to-farmer)
+        - [New Transaction For Vendors](#new-transaction-for-vendors)
+            - [Initiating Sell Request](#initiating-sell-request)
+            - [Adding new products to sell request](#adding-new-products-to-sell-request)
+            - [Sell request to Vendor](#sell-request-to-vendor)
+        - [New Transaction For SMEs](#new-transaction-for-smes)
+            - [Initiating Buy Request](#initiating-buy-request-1)
+            - [Adding new products to buy request](#adding-new-products-to-buy-request-1)
+            - [Buy request to SME](#buy-request-to-sme)
+            - [Initiating Sell Request](#initiating-sell-request-1)
+            - [Adding new products to sell request](#adding-new-products-to-sell-request-1)
+            - [Sell request to SME](#sell-request-to-vendor)
+    6. [Agent Inventory](#agent-inventory)
+    7. [Agent Leaderboard](#agent-leaderboard)
+    8. [Support Tickets](#support-tickets)
+    9. [New Ticket](#new-ticket)
+3. [Farmer Module](#farmer-module]
+    1. [Farmer Dashboard](#farmer-dashboard)
+    2. [Farmer Loan](#farmer-loan)
+    3. [Farmer's Loan Request](#farmer-loan-request)
+    4. [Farmer Sell History](#farmer-sell-history)
+    5. [Farmer's Sell Response](#farmer-sell-response)
+    6. [Farmer Leaderboard](#farmer-leaderboard)
+    7. [Support Tickets](#support-tickets-1)
+    8. [New Ticket](#new-ticket-1)
+4. [SME Module](#sme-module]
+    1. [SME Dashboard](#sme-dashboard)
+    2. [SME Loan](#sme-loan)
+    3. [SME's Loan Request](#sme-loan-request)
+    4. [SME Buy History](#sme-buy-history)
+    5. [SME's Buy Response](#sme-buy-response)
+    6. [SME Sell History](#sme-sell-history)
+    7. [SME's Sell Response](#sme-sell-response)
+    6. [SME Leaderboard](#sme-leaderboard)
+    7. [Support Tickets](#support-tickets-2)
+    8. [New Ticket](#new-ticket-2)
+    9. [SME Inventory](#sme-inventory)
+5. [Vendor Module](#vendor-module]
+    1. [Vendor Dashboard](#vendor-dashboard)
+    2. [Vendor Buy History](#vendor-buy-history)
+    3. [Vendor's Buy Response](#vendor-buy-response)
+    4. [Vendor Leaderboard](#vendor-leaderboard)
+    5. [Support Tickets](#support-tickets-3)
+    6. [New Ticket](#new-ticket-3)
+    7. [Vendor Inventory](#vendor-inventory)
+6. [Admin Module](#admin-module)
+    1. [Admin Support Mailbox](#admin-support-mailbox)
+    2. [Show User Profile to Admin](#show-user-profile-to-admin)
+    3. [Show Transaction History to Admin](#show-transaction-history-to-admin)
+    4. [Show Loan History to Admin](#show-loan-history-to-admin)
+    5. [Show Products & Pricing](#show-products--pricing)
+    6. [Edit Price and Tax of product](#edit-price-and-tax-of-product)
+    7. [Report Generation](#report-generation)
+        - [Get Division List](#get-division-list)
+        - [Get Division Report and District List](#get-division-report-and-district-list)
+        - [Get District Report and Upazilla List](#get-district-report-and-upazilla-list)
+        - [Get Upazilla Report and Union List](#get-upazilla-report-and-union-list)
+        - [Get Union Report](#get-union-report)
+    8. [Change Union Agent](#change-union-agent)
+
+---
 
 ## Register/Login Module
 
@@ -387,7 +461,7 @@
 
 ## Agent Module
 
-### Dashboard
+### Agent Dashboard
 
 | API Endpoint         | HTTP Method |
 | -------------------- | :---------: |
@@ -458,7 +532,7 @@
 
 ---
 
-### Loan-Requests 
+### Loan Requests
 
 | API Endpoint     | HTTP Method |
 | ---------------- | :---------: |
@@ -642,9 +716,9 @@
 
 ---
 
-### Transaction History
+### Agent Transaction History
 
-#### For Farmers
+#### Transaction History of Farmers
 
 | API Endpoint             | HTTP Method |
 | ------------------------ | :---------: |
@@ -713,7 +787,7 @@
 > }
 > ```
 
-#### For Vendors
+#### Transaction History of Vendors
 
 | API Endpoint             | HTTP Method |
 | ------------------------ | :---------: |
@@ -783,7 +857,7 @@
 > ```
 
 
-#### For SMEs
+#### Transaction History of SMEs
 
 | API Endpoint             | HTTP Method |
 | ------------------------ | :---------: |
@@ -897,7 +971,7 @@
 
 ### New Transaction
 
-#### For Farmers
+#### New Transaction For Farmers
 
 #### Initiating buy request
 
@@ -1558,7 +1632,7 @@
 
 ---
 
-### Inventory
+### Agent Inventory
 
 | API Endpoint             | HTTP Method |
 | ------------------------ | :---------: |
@@ -1606,7 +1680,7 @@
 
 ---
 
-### Leaderboard
+### Agent Leaderboard
 
 | API Endpoint             | HTTP Method |
 | ------------------------ | :---------: |
@@ -1698,7 +1772,7 @@
 
 ---
 
-### Support
+### Support Tickets
 
 | API Endpoint             | HTTP Method |
 | ------------------------ | :---------: |
@@ -1778,7 +1852,7 @@
 
 ## Farmer Module
 
-### Dashboard
+### Farmer Dashboard
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
@@ -1843,7 +1917,7 @@
 
 ---
 
-### Loan
+### Farmer Loan
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
@@ -1895,7 +1969,7 @@
 
 ---
 
-### Loan Request
+### Farmer Loan Request
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
@@ -1945,7 +2019,7 @@
 
 ---
 
-### Sell History
+### Farmer Sell History
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
@@ -2032,7 +2106,7 @@
 
 ---
 
-### Sell Response
+### Farmer Sell Response
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
@@ -2081,7 +2155,7 @@
 
 ---
 
-### Leaderboard
+### Farmer Leaderboard
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
@@ -2130,7 +2204,7 @@
 
 ---
 
-### Support Ticket
+### Support Tickets
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
@@ -2175,7 +2249,7 @@
 
 ---
 
-### Send Support Ticket
+### New Ticket
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
@@ -2225,7 +2299,7 @@
 
 ## SME Module
 
-### Dashboard
+### SME Dashboard
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
@@ -2312,7 +2386,7 @@
 
 ---
 
-### Loan
+### SME Loan
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
@@ -2364,7 +2438,7 @@
 
 ---
 
-### Loan Request
+### SME Loan Request
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
@@ -2414,7 +2488,7 @@
 
 ---
 
-### Buy History
+### SME Buy History
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
@@ -2501,7 +2575,7 @@
 
 ---
 
-### Buy Response
+### SME Buy Response
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
@@ -2550,7 +2624,7 @@
 
 ---
 
-### Sell History
+### SME Sell History
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
@@ -2637,7 +2711,7 @@
 
 ---
 
-### Sell Response
+### SME Sell Response
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
@@ -2686,7 +2760,7 @@
 
 ---
 
-### Leaderboard
+### SME Leaderboard
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
@@ -2735,7 +2809,7 @@
 
 ---
 
-### Support Ticket
+### Support Tickets
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
@@ -2780,7 +2854,7 @@
 
 ---
 
-### Send Support Ticket
+### New Ticket
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
@@ -2828,7 +2902,7 @@
 
 ---
 
-### Inventory
+### SME Inventory
 
 | API Endpoint             | HTTP Method |
 | ------------------------ | :---------: |
@@ -2878,7 +2952,7 @@
 
 ## Vendor Module
 
-### Dashboard
+### Vendor Dashboard
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
@@ -2965,7 +3039,7 @@
 
 ---
 
-### Buy History
+### Vendor Buy History
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
@@ -3052,7 +3126,7 @@
 
 ---
 
-### Buy Response
+### Vendor Buy Response
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
@@ -3101,7 +3175,7 @@
 
 ---
 
-### Leaderboard
+### Vendor Leaderboard
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
@@ -3150,7 +3224,7 @@
 
 ---
 
-### Support Ticket
+### Support Tickets
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
@@ -3195,7 +3269,7 @@
 
 ---
 
-### Send Support Ticket
+### New Ticket
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
@@ -3243,7 +3317,7 @@
 
 ---
 
-### Inventory
+### Vendor Inventory
 
 | API Endpoint             | HTTP Method |
 | ------------------------ | :---------: |
@@ -3644,7 +3718,7 @@
 >
 >```json
 >{
->    "success": true;
+>    "success": true,
 >}
 >```
 >
@@ -3946,7 +4020,7 @@
 >{
 >    "agentName": "Kamrul Hasan",
 >    "nid": 123456,
->    "phone": 0123445,
+>    "phone": 123445,
 >    "email": "kamrul@gmail.com",
 >    "registration_stat": {
 >           "no_farmers": 220,
