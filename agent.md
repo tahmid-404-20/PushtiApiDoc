@@ -1186,6 +1186,7 @@
 ---
 
 ## Inventory
+
 | API Endpoint             | HTTP Method |
 | ------------------------ | :---------: |
 | [/agent/inventory]() |   `GET`    |
@@ -1225,6 +1226,98 @@
 >           "name": "Butter",
 >           "quantity": 10,
 >           "unit_price": 400,
+>       },
+>   ],
+> }
+> ```
+
+</br>
+
+## Leaderboard
+
+| API Endpoint             | HTTP Method |
+| ------------------------ | :---------: |
+| [/agent/leaderboard]() |   `GET`    |
+
+> ### Request
+>
+> #### Request Body
+>
+> ```json
+> {
+>
+> }
+> ```
+
+</br>
+
+> ### Response - Success
+>
+> #### Response Code : 200 (`OK`)
+>
+> #### Response Body
+>
+> ```json
+> {
+>   "farmer_leaderboard": [
+>       {   
+>           "rank": 1,
+>           "name": "Lorem",
+>           "avatar": "avatar23.png",
+>           "points": 2345,
+>       },
+>       {   
+>           "rank": 2,
+>           "name": "Dorles",
+>           "avatar": "avatar23.png",
+>           "points": 2344,
+>       },
+>   ],
+>
+>   "sme_leaderboard": [
+>       {   
+>           "rank": 1,
+>           "name": "Loremq",
+>           "avatar": "avatar23.png",
+>           "points": 2345,
+>       },
+>       {   
+>           "rank": 2,
+>           "name": "Dorlesi",
+>           "avatar": "avatar23.png",
+>           "points": 2344,
+>       },
+>   ],
+>
+>   "vendor_leaderboard": [
+>       {   
+>           "rank": 1,
+>           "name": "Lorema",
+>           "avatar": "avatar23.png",
+>           "points": 2345,
+>       },
+>       {   
+>           "rank": 2,
+>           "name": "Dorlesa",
+>           "avatar": "avatar23.png",
+>           "points": 2344,
+>       },
+>   ],
+>
+>   "union_leaderboard": [
+>       {   
+>           "rank": 1,
+>           "name": "Asmodios",
+>           "upazilla": "Lalpur",
+>           "avatar": "avatar23.png",
+>           "points": 2345012,
+>       },
+>       {   
+>           "rank": 2,
+>           "name": "Lucifer",
+>           "upazilla": "Bucharest",
+>           "avatar": "avatar23.png",
+>           "points": 2344010,
 >       },
 >   ],
 > }
