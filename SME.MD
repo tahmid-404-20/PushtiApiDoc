@@ -29,6 +29,7 @@
 >       "name": "John Doe",
 >       "nid": 123456789,
 >       "Agent": "Dolores Sitamet",
+>       "avatar": "img-src.png",
 >       "Union": "Lorem",
 >       "Status": {
 >           "rank": "Gold",
@@ -106,7 +107,7 @@
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
-| [/farmer/loan]() |   `GET`     |
+| [/SME/loan]() |   `GET`     |
 
 >### Request
 >
@@ -160,7 +161,7 @@
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
-| [/farmer/loan/request]() |   `POST`     |
+| [/SME/loan/request]() |   `POST`     |
 
 >### Request
 >
@@ -201,6 +202,434 @@
 >   {
 >       "success": false,
 >       "message": "Loan Request Failed"
+>   }
+>    ```
+
+</br>
+
+---
+
+### Buy History
+
+| API Endpoint              | HTTP Method |
+| --- | :---: |
+| [/SME/buy]() |   `GET`     |
+
+>### Request
+>
+>#### Request Body
+>
+>    ```json
+>   {
+>
+>    }
+>    ```
+>
+
+</br>
+
+>### Response
+>
+>#### Response Code : 200 (`OK`)
+>
+>#### Response Body
+>
+>    ```json
+>   {
+>       "Buy History": [
+>           {
+>               "tid": 123456789,    
+>               "date": new Date('2022-10-31T09:00:00Z'),
+>               "amount": 1000,
+>               "Objects": [
+>                   {
+>                       "name": "Milk",
+>                       "quantity": 10,
+>                       "price": 1000
+>                   }
+>               ],
+>               "status": "Rejected"
+>           },
+>           {
+>               "tid": 123456789,
+>               "date": new Date('2022-10-31T09:00:00Z'),
+>               "amount": 500,
+>               "Objects": [
+>                   {
+>                       "name": "Milk",
+>                       "quantity": 5,
+>                       "price": 500
+>                   }
+>               ],
+>               "status": "Accepted"
+>           }
+>       ],
+>       "Pending Requests": [
+>           {
+>               "tid": 123456789,    
+>               "date": new Date('2022-10-31T09:00:00Z'),
+>               "amount": 1000,
+>               "Objects": [
+>                   {
+>                       "name": "Milk",
+>                       "quantity": 10,
+>                       "price": 1000
+>                   }
+>               ],
+>           },
+>           {
+>               "tid": 123456789,
+>               "date": new Date('2022-10-31T09:00:00Z'),
+>               "amount": 500,
+>               "Objects": [
+>                   {
+>                       "name": "Milk",
+>                       "quantity": 5,
+>                       "price": 500
+>                   }
+>               ],
+>           }
+>       ]
+>   }
+>    ```
+>
+
+</br>
+
+---
+
+### Buy Response
+
+| API Endpoint              | HTTP Method |
+| --- | :---: |
+| [/SME/buy/response]() |   `POST`     |
+
+>### Request
+>
+>#### Request Body
+>
+>    ```json
+>   {
+>       "tid": 123456789,
+>       "status": "Accepted"
+>   }
+>    ```
+
+</br>
+
+>### Response - Success
+>
+>#### Response Code : 200 (`OK`)
+>
+>#### Response Body
+>
+>    ```json
+>   {
+>      "success": true,
+>      "message": "Response Sent Successfully"
+>   }
+>    ```
+
+</br>
+
+>### Response - Failure
+>
+>#### Response Code : 400 (`Bad Request`)
+>
+>#### Response Body
+>
+>    ```json
+>   {
+>      "success": false,
+>      "message": "Response Failed"
+>   }
+>    ```
+
+</br>
+
+---
+
+### Sell History
+
+| API Endpoint              | HTTP Method |
+| --- | :---: |
+| [/SME/sell]() |   `GET`     |
+
+>### Request
+>
+>#### Request Body
+>
+>    ```json
+>   {
+>
+>    }
+>    ```
+>
+
+</br>
+
+>### Response
+>
+>#### Response Code : 200 (`OK`)
+>
+>#### Response Body
+>
+>    ```json
+>   {
+>       "Sell History": [
+>           {
+>               "tid": 123456789,    
+>               "date": new Date('2022-10-31T09:00:00Z'),
+>               "amount": 1000,
+>               "Objects": [
+>                   {
+>                       "name": "Curd",
+>                       "quantity": 10,
+>                       "price": 1000
+>                   }
+>               ],
+>               "status": "Rejected"
+>           },
+>           {
+>               "tid": 123456789,
+>               "date": new Date('2022-10-31T09:00:00Z'),
+>               "amount": 500,
+>               "Objects": [
+>                   {
+>                       "name": "Ghee",
+>                       "quantity": 5,
+>                       "price": 500
+>                   }
+>               ],
+>               "status": "Accepted"
+>           }
+>       ],
+>       "Pending Requests": [
+>           {
+>               "tid": 123456789,    
+>               "date": new Date('2022-10-31T09:00:00Z'),
+>               "amount": 1000,
+>               "Objects": [
+>                   {
+>                       "name": "Sweets",
+>                       "quantity": 10,
+>                       "price": 1000
+>                   }
+>               ],
+>           },
+>           {
+>               "tid": 123456789,
+>               "date": new Date('2022-10-31T09:00:00Z'),
+>               "amount": 500,
+>               "Objects": [
+>                   {
+>                       "name": "Curd",
+>                       "quantity": 5,
+>                       "price": 500
+>                   }
+>               ],
+>           }
+>       ]
+>   }
+>    ```
+>
+
+</br>
+
+---
+
+### Sell Response
+
+| API Endpoint              | HTTP Method |
+| --- | :---: |
+| [/SME/sell/response]() |   `POST`     |
+
+>### Request
+>
+>#### Request Body
+>
+>    ```json
+>   {
+>       "tid": 123456789,
+>       "status": "Accepted"
+>   }
+>    ```
+
+</br>
+
+>### Response - Success
+>
+>#### Response Code : 200 (`OK`)
+>
+>#### Response Body
+>
+>    ```json
+>   {
+>      "success": true,
+>      "message": "Response Sent Successfully"
+>   }
+>    ```
+
+</br>
+
+>### Response - Failure
+>
+>#### Response Code : 400 (`Bad Request`)
+>
+>#### Response Body
+>
+>    ```json
+>   {
+>      "success": false,
+>      "message": "Response Failed"
+>   }
+>    ```
+
+</br>
+
+---
+
+### Leaderboard
+
+| API Endpoint              | HTTP Method |
+| --- | :---: |
+| [/SME/leaderboard]() |   `GET`     |
+
+>### Request
+>
+>#### Request Body
+>
+>    ```json
+>   {
+> 
+>    }
+>    ```
+
+</br>
+
+>### Response
+>
+>#### Response Code : 200 (`OK`)
+>
+>#### Response Body
+>
+>    ```json
+>   [
+>       {
+>           "name": "John Doe",
+>           "rank": 1,
+>           "points":12355,
+>           "avatar": "img-src.png"
+>       },
+>      {
+>           "name": "Candice Wu",
+>           "rank": 2,
+>           "points":12155,
+>           "avatar": "img-src.png"
+>       },
+>      {
+>           "name": "Dolores Sitamet",
+>           "rank": 3,
+>           "points":12055,
+>           "avatar": "img-src.png"
+>       }
+>   ]
+>   ```
+
+</br>
+
+---
+
+### Support Ticket
+
+| API Endpoint              | HTTP Method |
+| --- | :---: |
+| [/SME/support]() |   `GET`     |
+
+>### Request
+>
+>#### Request Body
+>
+>    ```json
+>   {
+>
+>    }
+>    ```
+
+</br>
+
+>### Response
+>
+>#### Response Code : 200 (`OK`)
+>
+>#### Response Body
+>
+>    ```json
+>   [
+>       {
+>           "ticketId": 123456789,
+>           "date": new Date('2022-10-31T09:00:00Z'),
+>           "status": "Pending",
+>           "subject": "Buy Request Cancelled",
+>           "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Convallis tellus id interdum velit laoreet. Enim eu turpis egestas pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+>       },
+>       {
+>           "ticketId": 123456789,
+>          "date": new Date('2022-10-31T09:00:00Z'),
+>           "status": "Resolved",
+>           "subject": "Buy Request Cancelled",
+>           "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Convallis tellus id interdum velit laoreet. Enim eu turpis egestas pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+>       }
+>   ]
+>   ```
+
+</br>
+
+---
+
+### Send Support Ticket
+
+| API Endpoint              | HTTP Method |
+| --- | :---: |
+| [/SME/support/send]() |   `POST`     |
+
+>### Request
+>
+>#### Request Body
+>
+>    ```json
+>   {
+>       "subject": "Buy Request Cancelled",
+>       "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Convallis tellus id interdum velit laoreet. Enim eu turpis egestas pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+>   }
+
+</br>
+
+>### Response - Success
+>
+>#### Response Code : 200 (`OK`)
+>
+>#### Response Body
+>
+>    ```json
+>   {
+>      "success": true,
+>      "message": "Ticket Created Successfully"
+>   }
+>    ```
+
+</br>
+
+>### Response - Failure
+>
+>#### Response Code : 400 (`Bad Request`)
+>
+>#### Response Body
+>
+>    ```json
+>   {
+>      "success": false,
+>      "message": "Ticket Creation Failed"
 >   }
 >    ```
 
