@@ -747,11 +747,13 @@
 >           "id" : 23,
 >           "name": "Milk",
 >           "unit_price": 100,
+>           "quantity": 10,
 >        },
 >        {
 >           "id" : 24,
 >           "name": "Butter",
 >           "unit_price": 500,
+>           "quantity": 10,
 >        },
 >  ],
 > }
@@ -804,20 +806,6 @@
 
 </br>
 
-> ### Response - Inventory Error
->
-> #### Response Code : 400 (`Bad Request`)
->
-> #### Response Body
->
-> ```json
-> {
->   "success": false,
->   "message": "Not enough inventory available"
-> }
-> ```
-
-</br>
 
 
 #### Sell request to vendor
@@ -865,20 +853,6 @@
 
 </br>
 
-> ### Response - Inventory Error
->
-> #### Response Code : 400 (`Bad Request`)
->
-> #### Response Body
->
-> ```json
-> {
->   "success": false,
->   "message": "Not enough inventory available"
-> }
-> ```
-
-</br>
 
 ### For SMEs
 
@@ -928,9 +902,9 @@
 >           "name": "Milk",
 >           "unit_price": 100,
 >        },
->       {
+>        {
 >           "id" : 24,
->           "name": "Beef",
+>           "name": "Butter",
 >           "unit_price": 500,
 >        },
 >  ],
@@ -1060,9 +1034,6 @@
 
 </br>
 
-
-### For Vendors
-
 #### Initiating sell request
 
 | API Endpoint             | HTTP Method |
@@ -1106,11 +1077,13 @@
 >           "id" : 23,
 >           "name": "Milk",
 >           "unit_price": 100,
+>           "quantity": 10,
 >        },
 >        {
 >           "id" : 24,
 >           "name": "Butter",
 >           "unit_price": 500,
+>           "quantity": 10,
 >        },
 >  ],
 > }
@@ -1163,20 +1136,6 @@
 
 </br>
 
-> ### Response - Inventory Error
->
-> #### Response Code : 400 (`Bad Request`)
->
-> #### Response Body
->
-> ```json
-> {
->   "success": false,
->   "message": "Not enough inventory available"
-> }
-> ```
-
-</br>
 
 
 #### Sell request to sme
@@ -1224,17 +1183,53 @@
 
 </br>
 
-> ### Response - Inventory Error
+---
+
+## Inventory
+| API Endpoint             | HTTP Method |
+| ------------------------ | :---------: |
+| [/agent/inventory]() |   `GET`    |
+
+> ### Request
 >
-> #### Response Code : 400 (`Bad Request`)
+> #### Request Body
+>
+> ```json
+> {
+>
+> }
+> ```
+
+</br>
+
+> ### Response - Success
+>
+> #### Response Code : 200 (`OK`)
 >
 > #### Response Body
 >
 > ```json
 > {
->   "success": false,
->   "message": "Not enough inventory available"
+>   "products": [
+>       {
+>           "name": "Milk",
+>           "quantity": 10,
+>           "unit_price": 100,
+>       },
+>       {
+>           "name": "Rosogolla",
+>           "quantity": 10,
+>           "unit_price": 220,
+>       },
+>       {
+>           "name": "Butter",
+>           "quantity": 10,
+>           "unit_price": 400,
+>       },
+>   ],
 > }
 > ```
 
 </br>
+
+---
