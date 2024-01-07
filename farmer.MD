@@ -1,12 +1,12 @@
-# SME
+# Farmer
 
-## SME Module
+## Farmer Module
 
 ### Dashboard
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
-| [/SME/dashboard]() |   `GET`     |
+| [/farmer/dashboard]() |   `GET`     |
 
 >### Request
 >
@@ -36,33 +36,11 @@
 >           "points": 100,
 >           "points to next level": 50,
 >           "benifits": [
->               "5% Less Tax Deduction",
+>               "5% Extra Tax Deduction",
 >               "2.5% VAT taken (half of the usual)",
 >           ]    
 >       },
 >       "sell history": [
->           {
->               "month": "January",
->               "amount": 10000,
->           },
->           {
->               "month": "February",
->               "amount": 15000,
->           },
->           {
->               "month": "March",
->               "amount": 20000,
->           },
->           {
->               "month": "April",
->               "amount": 25000,
->           },
->           {
->               "month": "December",
->               "amount": 25000,
->           }
->       ],
->       "buy history": [
 >           {
 >               "month": "January",
 >               "amount": 10000,
@@ -95,7 +73,7 @@
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
-| [/SME/loan]() |   `GET`     |
+| [/farmer/loan]() |   `GET`     |
 
 >### Request
 >
@@ -149,7 +127,7 @@
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
-| [/SME/loan/request]() |   `POST`     |
+| [/farmer/loan/request]() |   `POST`     |
 
 >### Request
 >
@@ -197,151 +175,11 @@
 
 ---
 
-### Buy History
-
-| API Endpoint              | HTTP Method |
-| --- | :---: |
-| [/SME/buy]() |   `GET`     |
-
->### Request
->
->#### Request Body
->
->    ```json
->   {
->
->    }
->    ```
->
-
-</br>
-
->### Response
->
->#### Response Code : 200 (`OK`)
->
->#### Response Body
->
->    ```json
->   {
->       "Buy History": [
->           {
->               "tid": 123456789,    
->               "date": "2022-10-31T11:00:00Z",
->               "amount": 1000,
->               "Objects": [
->                   {
->                       "name": "Milk",
->                       "quantity": 10,
->                       "price": 1000
->                   }
->               ],
->               "status": "Rejected"
->           },
->           {
->               "tid": 123456789,
->               "date": "2022-10-31T11:00:00Z",
->               "amount": 500,
->               "Objects": [
->                   {
->                       "name": "Milk",
->                       "quantity": 5,
->                       "price": 500
->                   }
->               ],
->               "status": "Accepted"
->           }
->       ],
->       "Pending Requests": [
->           {
->               "tid": 123456789,    
->               "date": "2022-10-31T11:00:00Z",
->               "amount": 1000,
->               "Objects": [
->                   {
->                       "name": "Milk",
->                       "quantity": 10,
->                       "price": 1000
->                   }
->               ],
->           },
->           {
->               "tid": 123456789,
->               "date": "2022-10-31T11:00:00Z",
->               "amount": 500,
->               "Objects": [
->                   {
->                       "name": "Milk",
->                       "quantity": 5,
->                       "price": 500
->                   }
->               ],
->           }
->       ]
->   }
->    ```
->
-
-</br>
-
----
-
-### Buy Response
-
-| API Endpoint              | HTTP Method |
-| --- | :---: |
-| [/SME/buy/response]() |   `POST`     |
-
->### Request
->
->#### Request Body
->
->    ```json
->   {
->       "tid": 123456789,
->       "status": "Accepted"
->   }
->    ```
-
-</br>
-
->### Response - Success
->
->#### Response Code : 200 (`OK`)
->
->#### Response Body
->
->    ```json
->   {
->      "success": true,
->      "message": "Response Sent Successfully"
->   }
->    ```
-
-</br>
-
->### Response - Failure
->
->#### Response Code : 400 (`Bad Request`)
->
->#### Response Body
->
->    ```json
->   {
->      "success": false,
->      "message": "Response Failed"
->   }
->    ```
-
-</br>
-
----
-
 ### Sell History
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
-| [/SME/sell]() |   `GET`     |
+| [/farmer/sell]() |   `GET`     |
 
 >### Request
 >
@@ -371,7 +209,7 @@
 >               "amount": 1000,
 >               "Objects": [
 >                   {
->                       "name": "Curd",
+>                       "name": "Milk",
 >                       "quantity": 10,
 >                       "price": 1000
 >                   }
@@ -384,7 +222,7 @@
 >               "amount": 500,
 >               "Objects": [
 >                   {
->                       "name": "Ghee",
+>                       "name": "Meat",
 >                       "quantity": 5,
 >                       "price": 500
 >                   }
@@ -399,7 +237,7 @@
 >               "amount": 1000,
 >               "Objects": [
 >                   {
->                       "name": "Sweets",
+>                       "name": "Milk",
 >                       "quantity": 10,
 >                       "price": 1000
 >                   }
@@ -411,9 +249,9 @@
 >               "amount": 500,
 >               "Objects": [
 >                   {
->                       "name": "Curd",
->                       "quantity": 5,
->                       "price": 500
+>                       "name": "Calf",
+>                       "quantity": 1,
+>                       "price": 1000
 >                   }
 >               ],
 >           }
@@ -430,7 +268,7 @@
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
-| [/SME/sell/response]() |   `POST`     |
+| [/farmer/sell/response]() |   `POST`     |
 
 >### Request
 >
@@ -481,7 +319,7 @@
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
-| [/SME/leaderboard]() |   `GET`     |
+| [/farmer/leaderboard]() |   `GET`     |
 
 >### Request
 >
@@ -532,7 +370,7 @@
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
-| [/SME/support]() |   `GET`     |
+| [/farmer/support]() |   `GET`     |
 
 >### Request
 >
@@ -579,7 +417,7 @@
 
 | API Endpoint              | HTTP Method |
 | --- | :---: |
-| [/SME/support/send]() |   `POST`     |
+| [/farmer/support/send]() |   `POST`     |
 
 >### Request
 >
@@ -620,55 +458,3 @@
 >      "message": "Ticket Creation Failed"
 >   }
 >    ```
-
-</br>
-
----
-
-## Inventory
-
-| API Endpoint             | HTTP Method |
-| ------------------------ | :---------: |
-| [/SME/inventory]() |   `GET`    |
-
-> ### Request
->
-> #### Request Body
->
-> ```json
-> {
->
-> }
-> ```
-
-</br>
-
-> ### Response - Success
->
-> #### Response Code : 200 (`OK`)
->
-> #### Response Body
->
-> ```json
-> {
->   "products": [
->       {
->           "name": "Milk",
->           "quantity": 10,
->           "unit_price": 100,
->       },
->       {
->           "name": "Rosogolla",
->           "quantity": 10,
->           "unit_price": 220,
->       },
->       {
->           "name": "Butter",
->           "quantity": 10,
->           "unit_price": 400,
->       },
->   ],
-> }
-> ```
-
-</br>

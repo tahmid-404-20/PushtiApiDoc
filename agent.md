@@ -1351,24 +1351,24 @@
 >
 > #### Response Body
 >
-> ```json
-> {
->   "prev_tickets": [
->       {   
+>    ```json
+>    "previous tickets": [
+>       {
+>           "ticketId": 123456789,
 >           "date": "2022-10-31T11:00:00Z",
->           "subject": "Lorem Ipsum Doroles",
->           "message_body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incid idunt utlabore et dolore magna aliqua. Vel quam elementum pulvinar etiam. At auctor urna nunc id cursus metus aliquam",
->           "status": "Resolved",
->       },
->       {   
->           "date": "2023-01-01T11:00:00Z",
->           "subject": "Lorem Ipsum",
->           "message_body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incid idunt utlabore et dolore magna aliqua. Vel quam elementum pulvinar etiam. At auctor urna nunc id cursus metus aliquam",
 >           "status": "Pending",
+>           "subject": "Buy Request Cancelled",
+>           "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Convallis tellus id interdum velit laoreet. Enim eu turpis egestas pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
 >       },
->   ],
-> }
-> ```
+>       {
+>           "ticketId": 123456789,
+>          "date": "2022-10-31T09:00:00Z",
+>           "status": "Resolved",
+>           "subject": "Buy Request Cancelled",
+>           "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Convallis tellus id interdum velit laoreet. Enim eu turpis egestas pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+>       }
+>   ]
+>   ```
 
 </br>
 
@@ -1386,7 +1386,7 @@
 > ```json
 > {
 >   "subject": "Lorem Ipsum",
->   "message_body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incid idunt utlabore et dolore magna aliqua. Vel quam elementum pulvinar etiam. At auctor urna nunc id cursus metus aliquam",
+>   "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incid idunt utlabore et dolore magna aliqua. Vel quam elementum pulvinar etiam. At auctor urna nunc id cursus metus aliquam",
 > }
 > ```
 
