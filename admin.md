@@ -359,3 +359,377 @@
 >
 -----------------
 <br>
+
+| API Endpoint              | HTTP Method |
+| ------------------------- | :---------: |
+| [/admin/report]()                |   `GET`     |
+
+>### Request
+>
+>#### Request Body
+>
+>```json
+>{
+>
+>}
+>```
+>
+<br>
+
+>### Response
+>
+>#### Response Code: 200 (`OK`)
+>
+>#### Response Body
+>
+>```json
+>{
+>    "divisions": [
+>                      "Dhaka",
+>                      "Sylhet",
+>                      "Khulna"  
+>                 ]
+>}
+>```
+>
+-----------------
+<br>
+
+| API Endpoint              | HTTP Method |
+| ------------------------- | :---------: |
+| [/admin/report/division]()                |   `POST`     |
+
+>### Request
+>
+>#### Request Body
+>
+>```json
+>{
+>   "division": "Khulna"
+>}
+>```
+>
+<br>
+
+>### Response
+>
+>#### Response Code: 200 (`OK`)
+>
+>#### Response Body
+>
+>```json
+>{
+>    "districts": [
+>                   "Khulna",
+>                   "Bagerhat",
+>                   "Madaripur",                     
+>                 ],
+>    "registration_stat": {
+>           "no_farmers": 22000,
+>           "no_sme": 10000,
+>           "no_vendors": 50000,
+>       },
+>    "treasery_status" : {
+>           "loan_amount_farmer": 20,
+>           "loan_amount_sme": 10,
+>           "available": 70,
+>       },
+>    "transaction_stats": {
+>           "total_loan": 25000000,
+>           "total_buy": 50000000,
+>           "total_sell": 100000000,
+>           "total_tax": 10000000,
+>       },
+>     "tax_history_one_year": [
+>           {
+>               "month": "January",
+>               "amount": 10000000,
+>           },
+>           {
+>               "month": "February",
+>               "amount": 15000000,
+>           },
+>           {
+>               "month": "March",
+>               "amount": 20000000,
+>           },
+>           {
+>               "month": "April",
+>               "amount": 25000000,
+>           },
+>           {
+>               "month": "December",
+>               "amount": 2500000,
+>           }
+>       ],  
+>}
+>```
+>
+-----------------
+<br>
+
+| API Endpoint              | HTTP Method |
+| ------------------------- | :---------: |
+| [/admin/report/district]()                |   `POST`     |
+
+>### Request
+>
+>#### Request Body
+>
+>```json
+>{
+>   "district": "Bagerhat"
+>}
+>```
+>
+<br>
+
+>### Response
+>
+>#### Response Code: 200 (`OK`)
+>
+>#### Response Body
+>
+>```json
+>{
+>    "upazillas": [
+>                   "Pachgaon",
+>                   "Haatpur",
+>                   "Muradpur",                     
+>                 ],
+>    "registration_stat": {
+>           "no_farmers": 2200,
+>           "no_sme": 1000,
+>           "no_vendors": 5000,
+>       },
+>    "treasery_status" : {
+>           "loan_amount_farmer": 20,
+>           "loan_amount_sme": 10,
+>           "available": 70,
+>       },
+>    "transaction_stats": {
+>           "total_loan": 250000,
+>           "total_buy": 500000,
+>           "total_sell": 1000000,
+>           "total_tax": 100000,
+>       },
+>     "tax_history_one_year": [
+>           {
+>               "month": "January",
+>               "amount": 100000,
+>           },
+>           {
+>               "month": "February",
+>               "amount": 150000,
+>           },
+>           {
+>               "month": "March",
+>               "amount": 200000,
+>           },
+>           {
+>               "month": "April",
+>               "amount": 250000,
+>           },
+>           {
+>               "month": "December",
+>               "amount": 25000,
+>           }
+>       ],  
+>}
+>```
+>
+-----------------
+<br>
+
+| API Endpoint              | HTTP Method |
+| ------------------------- | :---------: |
+| [/admin/report/upazilla]()                |   `POST`     |
+
+>### Request
+>
+>#### Request Body
+>
+>```json
+>{
+>   "upazilla": "Muradpur"
+>}
+>```
+>
+<br>
+
+>### Response
+>
+>#### Response Code: 200 (`OK`)
+>
+>#### Response Body
+>
+>```json
+>{
+>    "unions": [
+>                   "Aluganj",
+>                   "Belpukur",                     
+>              ],
+>    "registration_stat": {
+>           "no_farmers": 2200,
+>           "no_sme": 1000,
+>           "no_vendors": 5000,
+>       },
+>    "treasery_status" : {
+>           "loan_amount_farmer": 20,
+>           "loan_amount_sme": 10,
+>           "available": 70,
+>       },
+>    "transaction_stats": {
+>           "total_loan": 250000,
+>           "total_buy": 500000,
+>           "total_sell": 100000,
+>           "total_tax": 100000,
+>       },
+>     "tax_history_one_year": [
+>           {
+>               "month": "January",
+>               "amount": 100000,
+>           },
+>           {
+>               "month": "February",
+>               "amount": 150000,
+>           },
+>           {
+>               "month": "March",
+>               "amount": 200000,
+>           },
+>           {
+>               "month": "April",
+>               "amount": 250000,
+>           },
+>           {
+>               "month": "December",
+>               "amount": 250000,
+>           }
+>       ],  
+>}
+>```
+>
+-----------------
+<br>
+
+| API Endpoint              | HTTP Method |
+| ------------------------- | :---------: |
+| [/admin/report/union]()                |   `POST`     |
+
+>### Request
+>
+>#### Request Body
+>
+>```json
+>{
+>   "union": "Belpukur"
+>}
+>```
+>
+<br>
+
+>### Response
+>
+>#### Response Code: 200 (`OK`)
+>
+>#### Response Body
+>
+>```json
+>{
+>    "agentName": "Kamrul Hasan",
+>    "nid": 123456,
+>    "phone": 0123445,
+>    "email": "kamrul@gmail.com",
+>    "registration_stat": {
+>           "no_farmers": 220,
+>           "no_sme": 100,
+>           "no_vendors": 500,
+>       },
+>    "treasery_status" : {
+>           "loan_amount_farmer": 20,
+>           "loan_amount_sme": 10,
+>           "available": 70,
+>       },
+>    "transaction_stats": {
+>           "total_loan": 250000,
+>           "total_buy": 500000,
+>           "total_sell": 100000,
+>           "total_tax": 10000,
+>       },
+>     "tax_history_one_year": [
+>           {
+>               "month": "January",
+>               "amount": 10000,
+>           },
+>           {
+>               "month": "February",
+>               "amount": 15000,
+>           },
+>           {
+>               "month": "March",
+>               "amount": 2000,
+>           },
+>           {
+>               "month": "April",
+>               "amount": 25000,
+>           },
+>           {
+>               "month": "December",
+>               "amount": 2500,
+>           }
+>       ],  
+>}
+>```
+>
+-----------------
+<br>
+
+| API Endpoint              | HTTP Method |
+| ------------------------- | :---------: |
+| [/admin/report/union/change]()                |   `POST`     |
+
+>### Request
+>
+>#### Request Body
+>
+>```json
+>{
+>   "id": 123,
+>   "name": "Forid Khan",
+>   "nid": 654321,
+>   "phone": 321453,
+>   "email": "khanforid@yahoo.com"
+>}
+>```
+>
+<br>
+
+>### Response - Success
+>
+>#### Response Code: 200 (`OK`)
+>
+>#### Response Body
+>
+>```json
+>{
+>    "success": true,
+>}
+>```
+>
+<br>
+
+>### Response - Invalid ID
+>
+>#### Response Code: 404 (`Not Found`)
+>
+>#### Response Body
+>
+>```json
+>{
+>   "success": false,
+>   "error": "Invalid agent ID"    
+>}
+>```
+-----------------
+<br>
