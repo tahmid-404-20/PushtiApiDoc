@@ -196,7 +196,7 @@
 
 | API Endpoint              | HTTP Method |
 | ------------------------- | :---------: |
-| [/admin/profile/loan]()                |   `GET`     |
+| [/admin/profile/loan]()                |   `POST`     |
 
 >### Request
 >
@@ -258,6 +258,102 @@
 >```json
 >{
 >    "error": "Invalid ID"
+>}
+>```
+>
+-----------------
+<br>
+
+| API Endpoint              | HTTP Method |
+| ------------------------- | :---------: |
+| [/admin/update]()                |   `GET`     |
+
+>### Request
+>
+>#### Request Body
+>
+>```json
+>{
+>
+>}
+>```
+>
+<br>
+
+>### Response
+>
+>#### Response Code: 200 (`OK`)
+>
+>#### Response Body
+>
+>```json
+>{
+>    "products": [
+>       {
+>           "productID": 3,
+>           "name": "Milk",
+>           "tax": 5,
+>           "unit_price": 100,
+>       },
+>       {
+>           "productID": 4,
+>           "name": "Rosogolla",
+>           "tax": 10,
+>           "unit_price": 220,
+>       },
+>       {
+>           "productID": 7,
+>           "name": "Butter",
+>           "tax": 5,
+>           "unit_price": 400,
+>       },
+>   ],
+>}
+>```
+>
+-----------------
+<br>
+
+| API Endpoint              | HTTP Method |
+| ------------------------- | :---------: |
+| [/admin/update/edit]()                |   `POST`     |
+
+>### Request
+>
+>#### Request Body
+>
+>```json
+>{
+>   "productID": 12,
+>   "price": 410,
+>   "tax": 7
+>}
+>```
+>
+<br>
+
+>### Response - Success
+>
+>#### Response Code: 200 (`OK`)
+>
+>#### Response Body
+>
+>```json
+>{
+>    "success": true;
+>}
+>```
+>
+<br>
+
+>### Response - Invalid ID
+>
+>#### Response Code: 404 (`Not Found`)
+>
+>```json
+>{
+>    "success": false,
+>    "error": "Invalid product ID"
 >}
 >```
 >
