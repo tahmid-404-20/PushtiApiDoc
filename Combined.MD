@@ -8,9 +8,23 @@
 
 ----------------------------------------------
 
-## Register/Log In Module
+## Index
 
-### Log In
+1. [Register/ Login Module](#register/login-module)
+    1. [Login](#login)
+    2. [Login Validation](#login-validate)
+    3. [Register](#register)
+        - [Get Division List and Type List for Farmers](#get-division-list-and-type-list-for-farmers)
+        - [Get Division List for SME/Vendors](#get-division-list-for-smevendors)
+        - [Get District List For Divisions](#get-district-list-for-divisions)
+        - [Get Upazilla List For District](#get-upazilla-list-for-district)
+        - [Get Union List For Upazilla](#get-union-list-for-upazilla)
+    4. [Submit Registration Request](https://github.com/Shattik/PushtiApiDoc/blob/master/Combined.MD#submit-registration-request)
+2. []
+
+## Register/Login Module
+
+### Login
 
 | API Endpoint              | HTTP Method |
 | ------------------------- | :---------: |
