@@ -292,7 +292,7 @@
 >
 > ```json
 > {
-    >       "buy_history": [
+>       "buy_history": [
 >           {
 >               "tid": 123456789,    
 >               "date": "2022-10-31T11:00:00Z",
@@ -594,10 +594,12 @@
 >   "farmer_id": 123456789,
 >   "products": [
 >       {  
+>           "product_id": 23,
 >           "name": "Milk",  
 >           "quantity": 10,
 >       },
 >       {    
+>           "product_id": 24,    
 >           "name": "Beef",
 >           "quantity": 10,
 >       },
@@ -654,10 +656,309 @@
 >   "farmer_id": 123456789,
 >   "products": [
 >       {  
+>           "product_id": 23,
 >           "name": "Milk",  
 >           "quantity": 10,
 >       },
 >       {    
+>           "product_id": 24,    
+>           "name": "Beef",
+>           "quantity": 10,
+>       },
+>   ],
+> }
+> ```
+
+</br>
+
+> ### Response - Success
+>
+> #### Response Code : 200 (`OK`)
+>
+> #### Response Body
+>
+> ```json
+> {
+>   "success": true,
+>   "message": "Request sent successfully"
+> }
+> ```
+
+</br>
+
+> ### Response - Budget Error
+>
+> #### Response Code : 400 (`Bad Request`)
+>
+> #### Response Body
+>
+> ```json
+> {
+>   "success": false,
+>   "message": "Not enough budget available"
+> }
+> ```
+
+</br>
+
+
+### For Vendors
+
+#### Initiating sell request
+
+| API Endpoint             | HTTP Method |
+| ------------------------ | :---------: |
+| [/agent/transaction/vendor/sell]() |   `GET`    |
+
+> ### Request
+>
+> #### Request Body
+>
+> ```json
+> {
+>
+> }
+> ```
+
+> ### Response
+>
+> #### Response Code : 200 (`OK`)
+>
+> #### Response Body
+>
+> ```json
+> {
+>   "vendors": [
+>       {
+>           "vendor_id" : 12345667,
+>           "name": "Lorem Ipsum",
+>           "avatar": "avatar23.png",
+>           "address": "Lorem Sitame",
+>        },
+>       {
+>           "vendor_id" : 12345669,
+>           "name": "Loremis Opiumis",
+>           "avatar": "avatar23.png",
+>           "address": "Lorem ame",
+>        },
+>       ],
+>   "products": [
+>       {
+>           "id" : 23,
+>           "name": "Milk",
+>           "unit_price": 100,
+>        },
+>        {
+>           "id" : 24,
+>           "name": "Butter",
+>           "unit_price": 500,
+>        },
+>  ],
+> }
+> ```
+
+
+#### Adding new products to sell request
+
+| API Endpoint             | HTTP Method |
+| ------------------------ | :---------: |
+| [/agent/transaction/vendor/sell/add]() |   `POST`    |
+
+> ### Request
+>
+> #### Request Body
+>
+> ```json
+> {
+>   "vendor_id": 123456789,
+>   "products": [
+>       {  
+>           "product_id": 23,
+>           "name": "Milk",  
+>           "quantity": 10,
+>       },
+>       {    
+>           "product_id": 24,    
+>           "name": "Beef",
+>           "quantity": 10,
+>       },
+>   ],
+> }
+> ```
+
+</br>
+
+> ### Response - Success
+>
+> #### Response Code : 200 (`OK`)
+>
+> #### Response Body
+>
+> ```json
+> {
+>   "success": true,
+>   "discount_amount": 1500,
+>   "tax_amount": 100,
+> }
+> ```
+
+</br>
+
+> ### Response - Inventory Error
+>
+> #### Response Code : 400 (`Bad Request`)
+>
+> #### Response Body
+>
+> ```json
+> {
+>   "success": false,
+>   "message": "Not enough inventory available"
+> }
+> ```
+
+</br>
+
+
+#### Sell request to vendor
+
+| API Endpoint             | HTTP Method |
+| ------------------------ | :---------: |
+| [/agent/transaction/vendor/sell/request]() |   `POST`    |
+
+> ### Request
+>
+> #### Request Body
+>
+> ```json
+> {
+>   "vendor_id": 123456789,
+>   "products": [
+>       {  
+>           "product_id": 23,
+>           "name": "Milk",  
+>           "quantity": 10,
+>       },
+>       {    
+>           "product_id": 24,    
+>           "name": "Beef",
+>           "quantity": 10,
+>       },
+>   ],
+> }
+> ```
+
+</br>
+
+> ### Response - Success
+>
+> #### Response Code : 200 (`OK`)
+>
+> #### Response Body
+>
+> ```json
+> {
+>   "success": true,
+>   "message": "Request sent successfully"
+> }
+> ```
+
+</br>
+
+> ### Response - Inventory Error
+>
+> #### Response Code : 400 (`Bad Request`)
+>
+> #### Response Body
+>
+> ```json
+> {
+>   "success": false,
+>   "message": "Not enough inventory available"
+> }
+> ```
+
+</br>
+
+### For SMEs
+
+#### Initiating buy request
+
+| API Endpoint             | HTTP Method |
+| ------------------------ | :---------: |
+| [/agent/transaction/sme/buy]() |   `GET`    |
+
+> ### Request
+>
+> #### Request Body
+>
+> ```json
+> {
+>
+> }
+> ```
+
+> ### Response
+>
+> #### Response Code : 200 (`OK`)
+>
+> #### Response Body
+>
+> ```json
+> {
+>   "smes": [
+>       {
+>           "sme_id" : 12345667,
+>           "name": "Lorem Ipsum",
+>           "avatar": "avatar23.png",
+>           "type": "Dairy",
+>           "address": "Lorem Sitame",
+>        },
+>       {
+>           "sme_id" : 12345669,
+>           "name": "Loremis Opiumis",
+>           "avatar": "avatar23.png",
+>           "type": "Dairy",
+>           "address": "Lorem ame",
+>        },
+>       ],
+>   "products": [
+>       {
+>           "id" : 23,
+>           "name": "Milk",
+>           "unit_price": 100,
+>        },
+>       {
+>           "id" : 24,
+>           "name": "Beef",
+>           "unit_price": 500,
+>        },
+>  ],
+> }
+> ```
+
+
+#### Adding new products to buy request
+
+| API Endpoint             | HTTP Method |
+| ------------------------ | :---------: |
+| [/agent/transaction/sme/buy/add]() |   `POST`    |
+
+> ### Request
+>
+> #### Request Body
+>
+> ```json
+> {
+>   "sme_id": 123456789,
+>   "products": [
+>       {  
+>           "product_id": 23,
+>           "name": "Milk",  
+>           "quantity": 10,
+>       },
+>       {    
+>           "product_id": 24,    
 >           "name": "Beef",
 >           "quantity": 10,
 >       },
@@ -693,6 +994,246 @@
 > {
 >   "success": false,
 >   "message": "Not enough budget available"
+> }
+> ```
+
+</br>
+
+
+#### Buy request to sme
+
+| API Endpoint             | HTTP Method |
+| ------------------------ | :---------: |
+| [/agent/transaction/sme/buy/request]() |   `POST`    |
+
+> ### Request
+>
+> #### Request Body
+>
+> ```json
+> {
+>   "sme_id": 123456789,
+>   "products": [
+>       {  
+>           "product_id": 23,
+>           "name": "Milk",  
+>           "quantity": 10,
+>       },
+>       {    
+>           "product_id": 24,    
+>           "name": "Beef",
+>           "quantity": 10,
+>       },
+>   ],
+> }
+> ```
+
+</br>
+
+> ### Response - Success
+>
+> #### Response Code : 200 (`OK`)
+>
+> #### Response Body
+>
+> ```json
+> {
+>   "success": true,
+>   "message": "Request sent successfully"
+> }
+> ```
+
+</br>
+
+> ### Response - Budget Error
+>
+> #### Response Code : 400 (`Bad Request`)
+>
+> #### Response Body
+>
+> ```json
+> {
+>   "success": false,
+>   "message": "Not enough budget available"
+> }
+> ```
+
+</br>
+
+
+### For Vendors
+
+#### Initiating sell request
+
+| API Endpoint             | HTTP Method |
+| ------------------------ | :---------: |
+| [/agent/transaction/sme/sell]() |   `GET`    |
+
+> ### Request
+>
+> #### Request Body
+>
+> ```json
+> {
+>
+> }
+> ```
+
+> ### Response
+>
+> #### Response Code : 200 (`OK`)
+>
+> #### Response Body
+>
+> ```json
+> {
+>   "smes": [
+>       {
+>           "sme_id" : 12345667,
+>           "name": "Lorem Ipsum",
+>           "avatar": "avatar23.png",
+>           "address": "Lorem Sitame",
+>        },
+>       {
+>           "sme_id" : 12345669,
+>           "name": "Loremis Opiumis",
+>           "avatar": "avatar23.png",
+>           "address": "Lorem ame",
+>        },
+>       ],
+>   "products": [
+>       {
+>           "id" : 23,
+>           "name": "Milk",
+>           "unit_price": 100,
+>        },
+>        {
+>           "id" : 24,
+>           "name": "Butter",
+>           "unit_price": 500,
+>        },
+>  ],
+> }
+> ```
+
+
+#### Adding new products to sell request
+
+| API Endpoint             | HTTP Method |
+| ------------------------ | :---------: |
+| [/agent/transaction/sme/sell/add]() |   `POST`    |
+
+> ### Request
+>
+> #### Request Body
+>
+> ```json
+> {
+>   "sme_id": 123456789,
+>   "products": [
+>       {  
+>           "product_id": 23,
+>           "name": "Milk",  
+>           "quantity": 10,
+>       },
+>       {    
+>           "product_id": 24,    
+>           "name": "Beef",
+>           "quantity": 10,
+>       },
+>   ],
+> }
+> ```
+
+</br>
+
+> ### Response - Success
+>
+> #### Response Code : 200 (`OK`)
+>
+> #### Response Body
+>
+> ```json
+> {
+>   "success": true,
+>   "discount_amount": 1500,
+>   "tax_amount": 100,
+> }
+> ```
+
+</br>
+
+> ### Response - Inventory Error
+>
+> #### Response Code : 400 (`Bad Request`)
+>
+> #### Response Body
+>
+> ```json
+> {
+>   "success": false,
+>   "message": "Not enough inventory available"
+> }
+> ```
+
+</br>
+
+
+#### Sell request to sme
+
+| API Endpoint             | HTTP Method |
+| ------------------------ | :---------: |
+| [/agent/transaction/sme/sell/request]() |   `POST`    |
+
+> ### Request
+>
+> #### Request Body
+>
+> ```json
+> {
+>   "sme_id": 123456789,
+>   "products": [
+>       {  
+>           "product_id": 23,
+>           "name": "Milk",  
+>           "quantity": 10,
+>       },
+>       {    
+>           "product_id": 24,    
+>           "name": "Beef",
+>           "quantity": 10,
+>       },
+>   ],
+> }
+> ```
+
+</br>
+
+> ### Response - Success
+>
+> #### Response Code : 200 (`OK`)
+>
+> #### Response Body
+>
+> ```json
+> {
+>   "success": true,
+>   "message": "Request sent successfully"
+> }
+> ```
+
+</br>
+
+> ### Response - Inventory Error
+>
+> #### Response Code : 400 (`Bad Request`)
+>
+> #### Response Body
+>
+> ```json
+> {
+>   "success": false,
+>   "message": "Not enough inventory available"
 > }
 > ```
 
