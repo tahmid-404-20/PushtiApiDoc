@@ -50,7 +50,7 @@
     7. [Agent Leaderboard](#agent-leaderboard)
     8. [Support Tickets](#support-tickets)
     9. [New Ticket](#new-ticket)
-3. [Farmer Module](#farmer-module]
+3. [Farmer Module](#farmer-module)
     1. [Farmer Dashboard](#farmer-dashboard)
     2. [Farmer Loan](#farmer-loan)
     3. [Farmer's Loan Request](#farmer-loan-request)
@@ -59,7 +59,7 @@
     6. [Farmer Leaderboard](#farmer-leaderboard)
     7. [Support Tickets](#support-tickets-1)
     8. [New Ticket](#new-ticket-1)
-4. [SME Module](#sme-module]
+4. [SME Module](#sme-module)
     1. [SME Dashboard](#sme-dashboard)
     2. [SME Loan](#sme-loan)
     3. [SME's Loan Request](#sme-loan-request)
@@ -71,7 +71,7 @@
     7. [Support Tickets](#support-tickets-2)
     8. [New Ticket](#new-ticket-2)
     9. [SME Inventory](#sme-inventory)
-5. [Vendor Module](#vendor-module]
+5. [Vendor Module](#vendor-module)
     1. [Vendor Dashboard](#vendor-dashboard)
     2. [Vendor Buy History](#vendor-buy-history)
     3. [Vendor's Buy Response](#vendor-buy-response)
