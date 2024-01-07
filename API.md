@@ -1,5 +1,7 @@
 # <div align="center">PUSHTI API Documentation</div>
+
 ### <div align="center"> Group 1 (A1) </div>
+
 <div align="center">1. 1905002 - Nafis Tahmid </div>
 <div align="center">2. 1905008 - Shattik Islam Rhythm </div>
 <div align="center">3. 1905026 - Wasif Hamid </div>
@@ -7,28 +9,41 @@
 ----------------------------------------------
 
 ## Login
+
 | API Endpoint              | HTTP Method |
 | ------------------------- | :---------: |
 | [/login]()                |   `GET`     |
 
 >### Request
+>
 >#### Request Body
+>
 >```json
 >{
 >
 >}
 >```
+>
 <br>
 
 >### Response
+>
 >#### Response Code: 200 (`OK`)
 >
 >#### Response Body
+>
 >```json
 >{
->    "accountTypes": ["string"]
+>    "accountTypes": [
+>                       "Admin",
+>                       "Agent",
+>                       "Farmer",
+>                       "SME",
+>                       "Vendor"
+>                    ]
 >}
 >```
+>
 ------------------
 <br>
 
@@ -37,27 +52,33 @@
 | [/login/validate]()       |   `POST`     |
 
 >### Request
+>
 >#### Request Body
+>
 >```json
 >{
->    "accountType": "string",
+>    "accountType": "Farmer",
 >    "id": 123,
->    "password": "string"
+>    "password": "abcd"
 >}
 >```
+>
 <br>
 
->### Response - Success 
+>### Response - Success
+>
 >#### Response Code: 200 (`OK`)
 >
 >#### Response Body
+>
 >```json
 >{
 >    "success": true,
->    "redirectURL": "string",
->    "token": "string"
+>    "redirectURL": "farmer/dashboard",
+>    "token": "123abc123"
 >}
 >```
+>
 <br>
 
 > [!NOTE]
@@ -65,15 +86,18 @@
 <br>
 
 >### Response - Wrong ID or Password
+>
 >#### Response Code: 401 (`Unauthorized`)
 >
 >#### Response Body
+>
 >```json
 >{
 >    "success": false,
 >    "error": "Invalid ID or password"
 >}
 >```
+>
 -------------
 <br>
 
@@ -84,23 +108,29 @@
 | [/register]()                |   `GET`     |
 
 >### Request
+>
 >#### Request Body
+>
 >```json
 >{
 >
 >}
 >```
+>
 <br>
 
 >### Response
+>
 >#### Response Code: 200 (`OK`)
 >
 >#### Response Body
+>
 >```json
 >{
 >    "redirectURL": "/register/farmer"
 >}
 >```
+>
 ---------------
 <br>
 
@@ -109,24 +139,36 @@
 | [/register/farmer]()                |   `GET`     |
 
 >### Request
+>
 >#### Request Body
+>
 >```json
 >{
 >
 >}
 >```
+>
 <br>
 
 >### Response
+>
 >#### Response Code: 200 (`OK`)
 >
 >#### Response Body
+>
 >```json
 >{
->    "farmerTypes": ["string"],
->    "divisions": ["string"]
+>    "farmerTypes": [
+>                        "Dairy", 
+>                        "Poultry"
+>                   ],
+>    "divisions": [
+>                        "Dhaka", 
+>                        "Sylhet"
+>                 ]
 >}
 >```
+>
 -------------
 <br>
 
@@ -136,23 +178,32 @@
 | [/register/vendor]()       |    `GET`    |
 
 >### Request
+>
 >#### Request Body
+>
 >```json
 >{
 >
 >}
 >```
+>
 <br>
 
 >### Response
+>
 >#### Response Code: 200 (`OK`)
 >
 >#### Response Body
+>
 >```json
 >{
->    "divisions": ["string"]
+>    "divisions": [
+>                        "Dhaka",
+>                        "Sylhet"
+>                 ]
 >}
 >```
+>
 -----------------
 <br>
 
@@ -161,23 +212,32 @@
 | [/register/division]()                |   `POST`     |
 
 >### Request
+>
 >#### Request Body
+>
 >```json
 >{
->    "division": "string"
+>    "division": "Sylhet"
 >}
 >```
+>
 <br>
 
 >### Response
+>
 >#### Response Code: 200 (`OK`)
 >
 >#### Response Body
+>
 >```json
 >{
->    "districts": ["string"]
+>    "districts": [
+>                        "Sylhet",
+>                        "Moulvibazar"
+>                 ]
 >}
 >```
+>
 ---------------------
 <br>
 
@@ -186,23 +246,32 @@
 | [/register/district]()                |   `POST`     |
 
 >### Request
+>
 >#### Request Body
+>
 >```json
 >{
->    "district": "string"
+>    "district": "Moulvibazar"
 >}
 >```
+>
 <br>
 
 >### Response
+>
 >#### Response Code: 200 (`OK`)
 >
 >#### Response Body
+>
 >```json
 >{
->    "upazillas": ["string"]
+>    "upazillas": [
+>                        "Lalganj"
+>                        "Sreemangal"
+>                 ]
 >}
 >```
+>
 -----------------
 <br>
 
@@ -211,23 +280,32 @@
 | [/register/upazilla]()                |   `POST`     |
 
 >### Request
+>
 >#### Request Body
+>
 >```json
 >{
->    "upazilla": "string"
+>    "upazilla": "Lalganj"
 >}
 >```
+>
 <br>
 
 >### Response
+>
 >#### Response Code: 200 (`OK`)
 >
 >#### Response Body
+>
 >```json
 >{
->    "unions": ["string"]
+>    "unions": [
+>                    "Haatimara",
+>                    "Chanpur"
+>              ]
 >}
 >```
+>
 ------------------
 <br>
 
@@ -236,43 +314,55 @@
 | [/register/submit]()                |   `POST`     |
 
 >### Request
+>
 >#### Request Body
+>
 >```json
 >{
->    "accountType": "string",
->    "farmerType": "string",
+>    "accountType": "Vendor",
+>    "farmerType": null,
 >    "nid": 1234567890,
->    "name": "string",
+>    "name": "Lal Mia",
 >    "dob": "02-02-2000",
->    "address": "string",
+>    "address": "Nilpur, Borodighi, Moulvibazar",
 >    "mobile": 123456789
 >}
 >```
+>
 <br>
 
+> [!NOTE]
+> Farmer type will be null for SME or vendor accounts and will be ignored by the backend.
+<br>
 
->### Response - Success 
+>### Response - Success
+>
 >#### Response Code: 200 (`OK`)
 >
 >#### Response Body
+>
 >```json
 >{
 >    "success": true,
->    "redirectURL": "string",
->    "token": "string"
+>    "redirectURL": "vendor/dashboard",
+>    "token": "1234cdb32"
 >}
 >```
+>
 <br>
 
 >### Response - Invalid Input
+>
 >#### Response Code: 422 (`Unprocessable Entity`)
 >
 >#### Response Body
+>
 >```json
 >{
 >    "success": false,
 >    "error": "Invalid {field}"
 >}
 >```
+>
 -----------
 <br>
