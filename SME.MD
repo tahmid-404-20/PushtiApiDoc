@@ -625,7 +625,7 @@
 
 ---
 
-## Inventory
+### Inventory
 
 | API Endpoint             | HTTP Method |
 | ------------------------ | :---------: |
