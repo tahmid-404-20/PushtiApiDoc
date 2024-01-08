@@ -45,7 +45,7 @@
             - [Buy request to SME](#buy-request-to-sme)
             - [Initiating Sell Request](#initiating-sell-request-1)
             - [Adding new products to sell request](#adding-new-products-to-sell-request-1)
-            - [Sell request to SME](#sell-request-to-vendor)
+            - [Sell request to SME](#sell-request-to-sme)
     6. [Agent Inventory](#agent-inventory)
     7. [Agent Leaderboard](#agent-leaderboard)
     8. [Support Tickets](#support-tickets)
@@ -1152,7 +1152,7 @@
 </br>
 
 
-#### For Vendors
+#### New Transaction For Vendors
 
 #### Initiating sell request
 
@@ -1304,7 +1304,7 @@
 </br>
 
 
-#### For SMEs
+#### New Transaction For SMEs
 
 #### Initiating buy request
 
