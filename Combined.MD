@@ -3842,7 +3842,19 @@
 >               "month": "December",
 >               "amount": 2500000,
 >           }
->       ],  
+>       ],
+>   "district_leaderboard" : [
+>       {   
+>           "rank": 1,
+>           "name": "Lorem",
+>           "points": 2345,
+>       },
+>       {   
+>           "rank": 2,
+>           "name": "Dorles",
+>           "points": 2344,
+>       },
+>   ],  
 >}
 >```
 >
@@ -3915,7 +3927,19 @@
 >               "month": "December",
 >               "amount": 25000,
 >           }
->       ],  
+>       ],
+>   "upazilla_leaderboard" : [
+>       {   
+>           "rank": 1,
+>           "name": "Lorem",
+>           "points": 2345,
+>       },
+>       {   
+>           "rank": 2,
+>           "name": "Dorles",
+>           "points": 2344,
+>       },
+>   ],    
 >}
 >```
 >
@@ -3987,7 +4011,23 @@
 >               "month": "December",
 >               "amount": 250000,
 >           }
->       ],  
+>       ],
+>   "union_leaderboard" : [
+>       {   
+>           "rank": 1,
+>           "name": "Lorem",
+>           "agent_name": "Kamrul Mia",
+>           "agent_avatar": "img-src.png",
+>           "points": 2345,
+>       },
+>       {   
+>           "rank": 2,
+>           "name": "Dorles",
+>           "agent_name": "Lorem Dirules",
+>           "agent_avatar": "img-src2.png",
+>           "points": 2344,
+>       },
+>   ],    
 >}
 >```
 >
