@@ -681,6 +681,7 @@
 > {
 >   "request_id": 2441140,
 >   "accepted" : true,
+>   "amount" : 120000
 > }
 > ```
 
