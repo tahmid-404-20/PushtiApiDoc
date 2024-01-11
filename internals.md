@@ -620,10 +620,11 @@
 >                   "union": "Vandaria",
 >                   "rank": "Gold",
 >                   "points": 321,
+>                   "status": "resolved",
 >                   "accountType": "Farmer",
 >                   "farmerType": "Dairy",
 >                   "subject": "Loan is not approved.",
->                   "details": "I have waited for a long time. Agent is not approving or rejecting my loan request."                      
+>                   "details": "I have waited for a long time. Agent is not approving or rejecting my loan request."         
 >        }
 >       ]
 >   }
