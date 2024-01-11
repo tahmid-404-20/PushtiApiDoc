@@ -14,17 +14,9 @@
 >
 >```json
 >{
->    "user type": "Agent",
->    "union": "Kamalpur",
+>    "user id": 12345,
 >}
 >```
-
->[!NOTE]
->**user type** can be one of the following:
->
->* Farmer
->* SME
->* Agent
 
 </br>
 
@@ -386,3 +378,203 @@
 >   "message": "Loan Acceptance Failed"
 > }
 > ```
+
+## Buy MS
+
+### Buy History
+
+| API Endpoint              | HTTP Method |
+| --- | :---: |
+| [/buy/history]() |   `POST`     |
+
+>### Request
+>
+>#### Request Body
+>
+>    ```json
+>   {
+>       "user id": 12345,
+>    }
+>    ```
+>
+
+</br>
+
+>### Response
+>
+>#### Response Code : 200 (`OK`)
+>
+>#### Response Body
+>
+>    ```json
+>   {
+>       "Buy History": [
+>           {
+>               "tid": 123456789,    
+>               "date": "2022-10-31T11:00:00Z",>               "farmer": "John Doe",
+>               "avatar": "avatar23.png",
+>               "amount": 1000,
+>               "Objects": [
+>                   {
+>                       "name": "Milk",
+>                       "quantity": 10,
+>                       "price": 1000
+>                   }
+>               ],
+>               "status": "Rejected"
+>           },
+>           {
+>               "tid": 123456789,
+>               "date": "2022-10-31T11:00:00Z",>               "farmer": "John Doe",
+>               "avatar": "avatar23.png",
+>               "amount": 500,
+>               "Objects": [
+>                   {
+>                       "name": "Milk",
+>                       "quantity": 5,
+>                       "price": 500
+>                   }
+>               ],
+>               "status": "Accepted"
+>           }
+>       ],
+>       "Pending Requests": [
+>           {
+>               "tid": 123456789,    
+>               "date": "2022-10-31T11:00:00Z",>               "farmer": "John Doe",
+>               "avatar": "avatar23.png",
+>               "amount": 1000,
+>               "Objects": [
+>                   {
+>                       "name": "Milk",
+>                       "quantity": 10,
+>                       "price": 1000
+>                   }
+>               ],
+>           },
+>           {
+>               "tid": 123456789,
+>               "date": "2022-10-31T11:00:00Z",
+>               "amount": 500,
+>               "Objects": [
+>                   {
+>                       "name": "Milk",
+>                       "quantity": 5,
+>                       "price": 500
+>                   }
+>               ],
+>           }
+>       ]
+>   }
+>    ```
+
+---
+
+### New Transaction
+
+#### Buy request to farmer
+
+| API Endpoint             | HTTP Method |
+| ------------------------ | :---------: |
+| [/buy/request]() |   `POST`    |
+
+> ### Request
+>
+> #### Request Body
+>
+> ```json
+> {
+>   "farmer_id": 123456789,
+>   "products": [
+>       {  
+>           "product_id": 23,
+>           "name": "Milk",  
+>           "quantity": 10,
+>           "price": 100,
+>       },
+>       {    
+>           "product_id": 24,    
+>           "name": "Beef",
+>           "quantity": 10,
+>           "price": 900,
+>       },
+>   ],
+> }
+> ```
+
+</br>
+
+> ### Response - Success
+>
+> #### Response Code : 200 (`OK`)
+>
+> #### Response Body
+>
+> ```json
+> {
+>   "success": true,
+>   "message": "Request sent successfully"
+> }
+> ```
+
+</br>
+
+> ### Response - Budget Error
+>
+> #### Response Code : 400 (`Bad Request`)
+>
+> #### Response Body
+>
+> ```json
+> {
+>   "success": false,
+>   "message": "Not enough budget available"
+> }
+> ```
+
+### Buy Response
+
+| API Endpoint              | HTTP Method |
+| --- | :---: |
+| [/buy/response]() |   `POST`     |
+
+>### Request
+>
+>#### Request Body
+>
+>    ```json
+>   {
+>       "tid": 123456789,
+>       "status": "Accepted"
+>   }
+>    ```
+
+</br>
+
+>### Response - Success
+>
+>#### Response Code : 200 (`OK`)
+>
+>#### Response Body
+>
+>    ```json
+>   {
+>      "success": true,
+>      "message": "Response Sent Successfully"
+>   }
+>    ```
+
+</br>
+
+>### Response - Failure
+>
+>#### Response Code : 400 (`Bad Request`)
+>
+>#### Response Body
+>
+>    ```json
+>   {
+>      "success": false,
+>      "message": "Response Failed"
+>   }
+>    ```
