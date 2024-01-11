@@ -578,3 +578,101 @@
 >      "message": "Response Failed"
 >   }
 >    ```
+
+---
+
+## Support Ticket MS
+
+### Support Ticket History
+
+| API Endpoint              | HTTP Method |
+| --- | :---: |
+| [/support/history]() |   `POST`     |
+
+>### Request
+>
+>#### Request Body
+>
+>    ```json
+>   {
+>       "id": 1234
+>   }
+>    ```
+
+</br>
+
+>### Response - Success
+>
+>#### Response Code : 200 (`OK`)
+>
+>#### Response Body
+>
+>    ```json
+>   {
+>      "messages": [
+>        {
+>                   "id": 123,
+>                   "ticket id": 1324,
+>                   "name": "Mofiz Mia",
+>                   "union": "Vandaria",
+>                   "rank": "Gold",
+>                   "points": 321,
+>                   "accountType": "Farmer",
+>                   "farmerType": "Dairy",
+>                   "subject": "Loan is not approved.",
+>                   "details": "I have waited for a long time. Agent is not approving or rejecting my loan request."                      
+>        }
+>       ]
+>   }
+>    ```
+
+</br>
+
+>### Response - Failure
+>
+>#### Response Code : 404 (`Not Found`)
+>
+>#### Response Body
+>
+>    ```json
+>   {
+>      "success": false,
+>      "message": "ID not found"
+>   }
+>    ```
+
+---
+
+### New Support Ticket
+
+| API Endpoint              | HTTP Method |
+| --- | :---: |
+| [/support/add]() |   `POST`     |
+
+> ### Request
+>
+> #### Request Body
+>
+> ```json
+> {
+>   "subject": "Lorem Ipsum",
+>   "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incid idunt utlabore et dolore magna aliqua    
+>               quam elementum pulvinar etiam. At auctor urna nunc id cursus metus aliquam",
+>   "id": 1234
+> }
+> ```
+
+> ### Response - Success
+>
+> #### Response Code : 200 (`OK`)
+>
+> #### Response Body
+>
+> ```json
+> {
+>   "success": true,
+>   "message": "Ticket sent successfully"
+> }
+> ```
+
+---
