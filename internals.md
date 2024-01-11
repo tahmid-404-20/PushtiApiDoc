@@ -411,7 +411,8 @@
 >       "Buy History": [
 >           {
 >               "tid": 123456789,    
->               "date": "2022-10-31T11:00:00Z",>               "farmer": "John Doe",
+>               "date": "2022-10-31T11:00:00Z",
+>               "farmer": "John Doe",
 >               "avatar": "avatar23.png",
 >               "amount": 1000,
 >               "Objects": [
@@ -425,7 +426,8 @@
 >           },
 >           {
 >               "tid": 123456789,
->               "date": "2022-10-31T11:00:00Z",>               "farmer": "John Doe",
+>               "date": "2022-10-31T11:00:00Z",
+>               "farmer": "John Doe",
 >               "avatar": "avatar23.png",
 >               "amount": 500,
 >               "Objects": [
@@ -441,7 +443,8 @@
 >       "Pending Requests": [
 >           {
 >               "tid": 123456789,    
->               "date": "2022-10-31T11:00:00Z",>               "farmer": "John Doe",
+>               "date": "2022-10-31T11:00:00Z",
+>               "farmer": "John Doe",
 >               "avatar": "avatar23.png",
 >               "amount": 1000,
 >               "Objects": [
@@ -656,8 +659,7 @@
 > ```json
 > {
 >   "subject": "Lorem Ipsum",
->   "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incid idunt utlabore et dolore magna aliqua    
->               quam elementum pulvinar etiam. At auctor urna nunc id cursus metus aliquam",
+>   "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incid idunt utlabore et dolore magna aliqua  quam elementum pulvinar etiam. At auctor urna nunc id cursus metus aliquam",
 >   "id": 1234
 > }
 > ```
