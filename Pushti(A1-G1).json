@@ -2,7 +2,7 @@
     {
         "usecase": {
             "name": "User Registration",
-            "scenario": "Farmers, SMEs, or Vendors register in Pushti, a platform for agricultural activities.",
+            "scenario": "Farmers, SMEs, or Vendors register in Pushti.",
             "actors": "Farmers/SMEs/Vendors",
             "preconditions": "The individual is a Bangladeshi adult citizen and intends to use Pushti for agricultural business activities.",
             "steps": [
