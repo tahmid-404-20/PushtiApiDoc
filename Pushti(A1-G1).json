@@ -2,65 +2,481 @@
     {
         "usecase": {
             "name": "User Registration",
-            "scenario": "Farmers, SMEs or Vendors register in Pushti",
-            "actors": "Farmers, SMEs, Vendors",
-            "preconditions": "Farmers, SMEs or vendors is a Bangladeshi adult citizen.",
+            "scenario": "Farmers, SMEs, or Vendors register in Pushti, a platform for agricultural activities.",
+            "actors": "Farmers/SMEs/Vendors",
+            "preconditions": "The individual is a Bangladeshi adult citizen and intends to use Pushti for agricultural business activities.",
             "steps": [
-                "New user chooses account type",
-                "If the user chooses farmer, he also chooses farmer type",
-                "User selects his division, district, upazilla, union",
-                "User gives his other informations like name, phone number, email, address.",
-                "User gives his preferred password and confirms it",
-                "User submits the form"
+                "New user selects their account type (Farmer, SME, Vendor).",
+                "If the user is a farmer, they also specify their farmer type.",
+                "User selects their geographic location including division, district, upazila, and union.",
+                "User provides personal and contact information including name, phone number, email, and address.",
+                "User creates a password, confirms it, and sets up their account security.",
+                "User reviews all provided information and submits the registration form."
+            ]
+        },        
+        "testcases": [
+            {
+                "name": "Valid Information Submission",
+                "description": "Ensure the system successfully registers a user who provides all required and valid information for account creation.",
+                "input": {
+                    "Name": "John Doe",
+                    "AccountType": "Farmer",
+                    "FarmerType": "Dairy",
+                    "Division": "Sylhet",
+                    "District": "Moulvibazar",
+                    "Upazilla": "Kamalganj",
+                    "Union": "Fulpur",
+                    "NID": 1234567890,
+                    "Phone": "01700000000",
+                    "Email": "djohn@gmail.com",
+                    "Address": "13/2 Fulpur, Kamalganj, Moulvibazar",
+                    "DOB": "01/01/1990",
+                    "Password": "123456",
+                    "ConfirmPassword": "123456"
+                },
+                "expected": {
+                    "outcome": "Registration successful",
+                    "status": "Completed"
+                }
+            },
+            {
+                "name": "Incomplete Information Submission",
+                "description": "Test if the system appropriately rejects the registration when any required field is left empty or incomplete.",
+                "input": {
+                    "Name": "John Doe",
+                    "AccountType": "Farmer",
+                    "FarmerType": "Dairy",
+                    "Division": "Sylhet",
+                    "District": "Moulvibazar",
+                    "Upazilla": "Kamalganj",
+                    "Union": "Fulpur",
+                    "NID": "",
+                    "Phone": "01700000000",
+                    "Email": "djohn@gmail.com",
+                    "Address": "13/2 Fulpur, Kamalganj, Moulvibazar",
+                    "DOB": "01/01/1990",
+                    "Password": "123456",
+                    "ConfirmPassword": "123456"
+                },
+                "expected": {
+                    "outcome": "Registration failed",
+                    "status": "Incomplete information"
+                }
+            },{
+                "name": "Duplicate National ID Submission",
+                "description": "Test if the system rejects a registration attempt when the provided National ID (NID) matches an existing user's NID in the system.",
+                "input": {
+                    "Name": "Jane Smith",
+                    "AccountType": "SME",
+                    "Division": "Chittagong",
+                    "District": "Cox's Bazar",
+                    "Upazilla": "Teknaf",
+                    "Union": "Hnila",
+                    "NID": 1234567890,  // Assuming this NID is already in use
+                    "Phone": "01710000000",
+                    "Email": "janesmith@gmail.com",
+                    "Address": "45/A Hnila, Teknaf, Cox's Bazar",
+                    "DOB": "02/02/1990",
+                    "Password": "654321",
+                    "ConfirmPassword": "654321"
+                },
+                "expected": {
+                    "outcome": "Registration failed",
+                    "status": "Duplicate NID"
+                }
+            },
+            {
+                "name": "Invalid Email Format Submission",
+                "description": "Ensure the system denies registration when the email provided does not match standard email formatting.",
+                "input": {
+                    "Name": "Alice Johnson",
+                    "AccountType": "Vendor",
+                    "Division": "Khulna",
+                    "District": "Satkhira",
+                    "Upazilla": "Shyamnagar",
+                    "Union": "Padmapukur",
+                    "NID": 9876543210,
+                    "Phone": "01720000000",
+                    "Email": "alice.johnsonatgmail.com",  // Incorrect email format
+                    "Address": "98/B Padmapukur, Shyamnagar, Satkhira",
+                    "DOB": "03/03/1985",
+                    "Password": "789123",
+                    "ConfirmPassword": "789123"
+                },
+                "expected": {
+                    "outcome": "Registration failed",
+                    "status": "Invalid email format"
+                }
+            },
+            {
+                "name": "Password and Confirm Password Mismatch",
+                "description": "Verify that the system prevents registration if the 'Password' and 'Confirm Password' fields do not match.",
+                "input": {
+                    "Name": "Omar Faruk",
+                    "AccountType": "Farmer",
+                    "Division": "Barisal",
+                    "District": "Bhola",
+                    "Upazilla": "Borhanuddin",
+                    "Union": "Bapta",
+                    "NID": 4567891230,
+                    "Phone": "01730000000",
+                    "Email": "omarfaruk@example.com",
+                    "Address": "12/C Bapta, Borhanuddin, Bhola",
+                    "DOB": "04/04/1988",
+                    "Password": "123abc",
+                    "ConfirmPassword": "abc123" // Mismatched password
+                },
+                "expected": {
+                    "outcome": "Registration failed",
+                    "status": "Password fields mismatch"
+                }
+            }
+
+        ]
+        
+    }, 
+    {
+        "usecase": {
+            "name": "Loan Application",
+            "scenario": "The scenario involves a Farmer or Small and Medium-sized Enterprise (SME) applying for a loan.",
+            "actors": "Farmer or SME.",
+            "preconditions": "The Farmer or SME is registered under an Agent.",
+            "steps": [
+                "The Farmer or SME logs into the system and submits a loan application.",
+                "The system processes the loan application."
             ]
         },
         "testcases": [
             {
-                "name": "Valid Information Selection",
-                "description": "Verify that an user can successfully create an account.",
+                "name": "Valid Loan Application",
+                "description": "Verify that a Farmer or SME can successfully apply for a loan.",
                 "input": {
-                    "Name": "John Doe",
-                    "accountType": "Farmer",
-                    "farmerType": "Dairy",
-                    "division": "Sylhet",
-                    "district": "Moulvibazar",
-                    "upazilla": "Kamalganj",
-                    "union": "Fulpur",
-                    "nid": 1234567890,
-                    "phone": "01700000000",
-                    "email": "djohn@gmail.com",
-                    "address": "13/2 Fulpur, Kamalganj, Moulvibazar",
-                    "dob": "01/01/1990",
-                    "password": "123456",
-                    "confirmPassword": "123456"
+                    "min": 4000,
+                    "max": 5000,
+                    "description": "The requested loan is for the purchase of new cows."
                 },
                 "expected": {
-                    "outcome": "Registration successful"
+                    "outcome": "The loan application is successful.",
+                    "loanStatus": "Pending"
                 }
             },
             {
-                "name": "Incpmplete Input",
-                "description": "Verify that the system handles the case where a user tries to submit any required field empty.",
+                "name": "Loan Application with Empty Description",
+                "description": "Verify that the system handles a loan application with an empty description appropriately.",
                 "input": {
-                    "Name": "John Doe",
-                    "accountType": "Farmer",
-                    "farmerType": "Dairy",
-                    "division": "Sylhet",
-                    "district": "Moulvibazar",
-                    "upazilla": "Kamalganj",
-                    "union": "Fulpur",
-                    "nid": "",
-                    "phone": "01700000000",
-                    "email": "djohn@gmail.com",
-                    "address": "13/2 Fulpur, Kamalganj, Moulvibazar",
-                    "dob": "01/01/1990",
-                    "password": "123456",
-                    "confirmPassword": "123456"
+                    "min": 4000,
+                    "max": 5000,
+                    "description": ""
                 },
                 "expected": {
-                    "outcome": "Registration failed"
+                    "outcome": "The loan application failed",
+                    "status": "Empty description"
+                }
+            },
+            {
+                "name": "Loan Application with Negative Loan Amount",
+                "description": "Verify that the system handles a loan application with a negative loan amount appropriately.",
+                "input": {
+                    "min": -4000,
+                    "max": 5000,
+                    "description": "The loan is needed for equipment purchase."
+                },
+                "expected": {
+                    "outcome": "The loan application is rejected due to invalid input.",
+                    "status": "Negative loan amount"
+                }
+            },
+            {
+                "name": "Loan Application with Special Characters in Description",
+                "description": "Verify that the system handles a loan application with special characters in the description field appropriately.",
+                "input": {
+                    "min": 4000,
+                    "max": 5000,
+                    "description": "Loan for @#$% project"
+                },
+                "expected": {
+                    "outcome": "The loan application is rejected due to invalid input.",
+                    "status": "Special characters in description"
                 }
             }
         ]
-    }
+    },
+    {
+        "usecase": {
+            "name": "Loan Approval Process",
+            "scenario": "An agent reviews and makes a decision on loan applications submitted by registered farmers or SMEs.",
+            "actors": "Agent",
+            "preconditions": "A loan application has been submitted by a farmer or SME who is registered under the agent.",
+            "steps": [
+                "Agent accesses the system and reviews the list of pending loan requests.",
+                "Agent evaluates the loan request considering the applicant's details and the requested amount.",
+                "Based on the assessment and available budget, the agent either approves or rejects the loan."
+            ]
+        },
+        "testcases": [
+            {
+                "name": "Successful Loan Approval",
+                "description": "Test to confirm that an agent can approve a loan request when the requested amount is within the permissible limits and aligns with the applicant's profile.",
+                "input": {
+                    "loan_id": 10,
+                    "approvedAmount": 5000
+                },
+                "expected": {
+                    "outcome": "Loan approval successful",
+                    "status": "Approved"
+                }
+            },
+            {
+                "name": "Loan Application Rejection",
+                "description": "Evaluate the agent's ability to reject a loan application based on criteria such as insufficient documentation or unsatisfactory credit history.",
+                "input": {
+                    "loan_id": 10
+                },
+                "expected": {
+                    "outcome": "Loan rejection successful",
+                    "status": "Rejected"
+                }
+            },
+            {
+                "name": "Loan Approval Budget Limitation",
+                "description": "Assess the system's functionality to prevent loan approval if the requested amount exceeds the available budget.",
+                "input": {
+                    "loan_id": 10,
+                    "approvedAmount": 50000  // Exceeds budget limit
+                },
+                "expected": {
+                    "outcome": "Loan approval failed",
+                    "status": "Rejected - Budget Limitation"
+                }
+            }
+        ]
+    },
+    {
+        "usecase": {
+            "name": "Buy Request and Approval",
+            "scenario": "An agent generates a buy request for products, which is then reviewed and approved or rejected by the farmer or SME.",
+            "actors": "Agent, Farmer/SME",
+            "preconditions": "The farmer or SME is registered under the agent and has products available for sale.",
+            "steps": [
+                "Agent assesses the available products and inputs their details along with the desired quantities.",
+                "Agent generates and sends a buy request to the farmer or SME.",
+                "Farmer or SME reviews the buy request and either approves or rejects it."
+            ]
+        },
+        "testcases": [
+            {
+                "name": "Successful Buy Request Approval",
+                "description": "Ensure that an agent can generate a valid buy request and that it can be successfully approved by the farmer or SME.",
+                "input": {
+                    "agent_id": 987654321,
+                    "farmer_id": 123456789,
+                    "products": [
+                        {  
+                            "product_id": 23,
+                            "name": "Milk",  
+                            "quantity": 10
+                        },
+                        {    
+                            "product_id": 24,    
+                            "name": "Beef",
+                            "quantity": 10
+                        }
+                    ]
+                },
+                "expected": {
+                    "outcome": "Buy request approved",
+                    "status": "Approved"
+                }
+            },
+            {
+                "name": "Rejected Buy Request",
+                "description": "Test the functionality where a farmer or SME can reject a buy request generated by the agent.",
+                "input": {
+                    "agent_id": 987654321,
+                    "farmer_id": 123456789,
+                    "products": [
+                        {  
+                            "product_id": 23,
+                            "name": "Milk",  
+                            "quantity": 10
+                        },
+                        {    
+                            "product_id": 24,    
+                            "name": "Beef",
+                            "quantity": 2
+                        }
+                    ]
+                },
+                "expected": {
+                    "outcome": "Buy request rejected",
+                    "status": "Rejected"
+                }
+            },
+            {
+                "name": "Buy Request Exceeds Budget",
+                "description": "Verify if the system appropriately handles scenarios where the total cost of the buy request exceeds the available budget of the agent.",
+                "input": {
+                    "agent_id": 987654321,
+                    "farmer_id": 123456789,
+                    "products": [
+                        {  
+                            "product_id": 23,
+                            "name": "Milk",  
+                            "quantity": 50
+                        },
+                        {    
+                            "product_id": 24,    
+                            "name": "Beef",
+                            "quantity": 30
+                        }
+                    ]
+                },
+                "expected": {
+                    "outcome": "Buy request denied",
+                    "status": "Denied - Exceeds budget"
+                }
+            }
+        ]
+    },
+    {
+        "usecase": {
+            "name": "Sell Request and Approval",
+            "scenario": "An agent creates a sell request for products, which is then reviewed and either approved or rejected by the vendor or SME.",
+            "actors": "Agent/Vendor/SME",
+            "preconditions": "The vendor or SME is registered under the agent and is interested in purchasing products from the agent.",
+            "steps": [
+                "Agent compiles a list of items available for sale along with their quantities.",
+                "Agent formally generates a sell request and sends it to the vendor or SME.",
+                "Vendor or SME reviews the sell request and decides to approve or reject it."
+            ]
+        },
+        "testcases": [
+            {
+                "name": "Successful Sell Request Approval",
+                "description": "Confirm that an agent can generate a valid sell request and that it is successfully approved by the vendor or SME.",
+                "input": {
+                    "agent_id": 987654321,
+                    "vendor_id": 123456789,
+                    "products": [
+                        {  
+                            "product_id": 23,
+                            "name": "Milk",  
+                            "quantity": 10
+                        },
+                        {    
+                            "product_id": 24,    
+                            "name": "Beef",
+                            "quantity": 10
+                        }
+                    ]
+                },
+                "expected": {
+                    "outcome": "Sell request approved",
+                    "status": "Completed"
+                }
+            },
+            {
+                "name": "Rejected Sell Request",
+                "description": "Evaluate if a vendor or SME can effectively reject a sell request generated by the agent.",
+                "input": {
+                    "agent_id": 987654321,
+                    "vendor_id": 123456789,
+                    "products": [
+                        {  
+                            "product_id": 23,
+                            "name": "Milk",  
+                            "quantity": 10
+                        },
+                        {    
+                            "product_id": 24,    
+                            "name": "Beef",
+                            "quantity": 2
+                        }
+                    ]
+                },
+                "expected": {
+                    "outcome": "Sell request rejected",
+                    "status": "Rejected"
+                }
+            },
+            {
+                "name": "Insufficient Inventory for Sell Request",
+                "description": "Verify the system's response when the sell request contains a quantity that exceeds the agent's available inventory.",
+                "input": {
+                    "agent_id": 987654321,
+                    "vendor_id": 123456789,
+                    "products": [
+                        {  
+                            "product_id": 23,
+                            "name": "Milk",  
+                            "quantity": 10
+                        },
+                        {    
+                            "product_id": 100,    
+                            "name": "Beef",
+                            "quantity": 200  // Exceeds inventory
+                        }
+                    ]
+                },
+                "expected": {
+                    "outcome": "Sell request denied",
+                    "status": "Denied - Insufficient inventory"
+                }
+            }
+        ]
+    },
+    {
+        "usecase": {
+            "name": "New Product Addition Process",
+            "scenario": "An administrative user adds a new product to the system's inventory.",
+            "actors": "Admin",
+            "preconditions": "Admin has the necessary privileges to add new products.",
+            "steps": [
+                "Admin logs into the system with appropriate credentials.",
+                "Admin navigates to the product management section.",
+                "Admin inputs the details of the new product and submits the information."
+            ]
+        },
+        "testcases": [
+            {
+                "name": "Successful New Product Addition",
+                "description": "Confirm that an admin can successfully add a new product to the system, provided that the product does not already exist in the inventory.",
+                "input": {
+                    "productName": "Milk",
+                    "unitPrice": 50,
+                    "taxPercentage": 3
+                },
+                "expected": {
+                    "outcome": "Product addition successful",
+                    "status": "Added"
+                }
+            },
+            {
+                "name": "Duplicate Product Addition Prevention",
+                "description": "Test the system's capability to prevent the addition of a product that already exists in the inventory to avoid duplication.",
+                "input": {
+                    "productName": "Milk",
+                    "unitPrice": 50,
+                    "taxPercentage": 3
+                },
+                "expected": {
+                    "outcome": "Product addition failed",
+                    "status": "Duplicate - Product already exists"
+                }
+            },
+            {
+                "name": "Product Addition with Incomplete Details",
+                "description": "Assess the system's response when attempting to add a new product with incomplete or missing details.",
+                "input": {
+                    "productName": "Butter",
+                    "unitPrice": null, // Missing unit price
+                    "taxPercentage": 5
+                },
+                "expected": {
+                    "outcome": "Product addition failed",
+                    "status": "Failed - Incomplete product details"
+                }
+            }
+        ]
+    }           
 ] 
