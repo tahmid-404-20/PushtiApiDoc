@@ -62,7 +62,8 @@
                     "outcome": "Registration failed",
                     "status": "Incomplete information"
                 }
-            },{
+            },
+            {
                 "name": "Duplicate National ID Submission",
                 "description": "Test if the system rejects a registration attempt when the provided National ID (NID) matches an existing user's NID in the system.",
                 "input": {
@@ -72,7 +73,7 @@
                     "District": "Cox's Bazar",
                     "Upazilla": "Teknaf",
                     "Union": "Hnila",
-                    "NID": 1234567890,  // Assuming this NID is already in use
+                    "NID": 1234567890,
                     "Phone": "01710000000",
                     "Email": "janesmith@gmail.com",
                     "Address": "45/A Hnila, Teknaf, Cox's Bazar",
@@ -97,7 +98,7 @@
                     "Union": "Padmapukur",
                     "NID": 9876543210,
                     "Phone": "01720000000",
-                    "Email": "alice.johnsonatgmail.com",  // Incorrect email format
+                    "Email": "alice.johnsonatgmail.com",
                     "Address": "98/B Padmapukur, Shyamnagar, Satkhira",
                     "DOB": "03/03/1985",
                     "Password": "789123",
@@ -124,7 +125,7 @@
                     "Address": "12/C Bapta, Borhanuddin, Bhola",
                     "DOB": "04/04/1988",
                     "Password": "123abc",
-                    "ConfirmPassword": "abc123" // Mismatched password
+                    "ConfirmPassword": "abc123"
                 },
                 "expected": {
                     "outcome": "Registration failed",
@@ -242,7 +243,7 @@
                 "description": "Assess the system's functionality to prevent loan approval if the requested amount exceeds the available budget.",
                 "input": {
                     "loan_id": 10,
-                    "approvedAmount": 50000  // Exceeds budget limit
+                    "approvedAmount": 50000 
                 },
                 "expected": {
                     "outcome": "Loan approval failed",
@@ -414,7 +415,7 @@
                         {    
                             "product_id": 100,    
                             "name": "Beef",
-                            "quantity": 200  // Exceeds inventory
+                            "quantity": 200 
                         }
                     ]
                 },
@@ -469,7 +470,7 @@
                 "description": "Assess the system's response when attempting to add a new product with incomplete or missing details.",
                 "input": {
                     "productName": "Butter",
-                    "unitPrice": null, // Missing unit price
+                    "unitPrice": null,
                     "taxPercentage": 5
                 },
                 "expected": {
