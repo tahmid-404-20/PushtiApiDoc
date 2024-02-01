@@ -1,0 +1,68 @@
+[
+    {
+        "usecase": {
+            "name": "User Registration",
+            "scenario": "Farmers, SMEs or Vendors register in Pushti",
+            "actors": "Farmers, SMEs, Vendors",
+            "preconditions": "Farmers, SMEs or vendors must be a Bangladeshi adult citizen.",
+            "steps": [
+                "New user chooses account type",
+                "If the user chooses farmer, he also chooses farmer type",
+                "User selects his division, district, upazilla, union",
+                "User gives his other informations like phonen number, email, address.",
+                "User gives his preferred password and confirms it",
+                "User submits the form"
+            ]
+        },
+        "testcases": [
+            {
+                "name": "Valid Course Selection",
+                "description": "Verify that a student can successfully select and register for valid courses in a semester.",
+                "input": {
+                    "selectedCourses": [
+                        "Math101",
+                        "English202",
+                        "History150"
+                    ]
+                },
+                "expected": {
+                    "outcome": "Registration successful",
+                    "status": "Approved"
+                }
+            },
+            {
+                "name": "Empty Course Selection",
+                "description": "Verify that the system handles the case where a student tries to submit an empty course selection.",
+                "input": {
+                    "selectedCourses": []
+                },
+                "expected": {
+                    "outcome": "Registration failed",
+                    "status": "Rejected"
+                }
+            },
+            {
+                "name": "Advisor Approval",
+                "description": "Verify that the advisor can successfully approve a student's registration.",
+                "input": {
+                    "advisorApproval": true
+                },
+                "expected": {
+                    "outcome": "Registration approved",
+                    "status": "Approved"
+                }
+            },
+            {
+                "name": "Advisor Rejection",
+                "description": "Verify that the advisor can reject a student's registration.",
+                "input": {
+                    "advisorApproval": false
+                },
+                "expected": {
+                    "outcome": "Registration rejected",
+                    "status": "Rejected"
+                }
+            }
+        ]
+    }
+] 
