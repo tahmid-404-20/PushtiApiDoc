@@ -99,23 +99,34 @@
     },
     {
         "usecase": {
-            "name": "Milk Production and Sales",
-            "scenario": "Farmer sells milk production and a percentage is deducted from their sold products.",
-            "actors": "Farmer",
-            "preconditions": "Farmer has produced milk and is registered in the system.",
+            "name": "Buy Request and Approval",
+            "scenario": "Agent generates a buy request and the farmer or SME approves it.",
+            "actors": "Agnet, Farmer or SME",
+            "preconditions": "Framer or SME is registered under the agent and he has brought his products to sell.",
             "steps": [
-                "Farmer records milk production details in the system.",
-                "Farmer lists milk for sale.",
-                "System calculates and deducts a percentage for repayment."
+                "Agent inputs the buy items and their quantities",
+                "Agent generates a buy request",
+                "Farmer or SME checks the buy request and approves it"
             ]
         },
         "testcases": [
             {
-                "name": "Valid Milk Sales",
-                "description": "Verify that a farmer can successfully record, sell milk, and have the appropriate deductions made.",
+                "name": "Valid Buy Request",
+                "description": "Verify that a agent can successfully generate a buy request and the farmer or SME can approve it.",
                 "input": {
-                    "milkQuantity": 100,
-                    "salePricePerUnit": 50
+                    "farmer_id": 123456789,
+                    "products": [
+                        {  
+                            "product_id": 23,
+                            "name": "Milk",  
+                            "quantity": 10
+                        },
+                        {    
+                            "product_id": 24,    
+                            "name": "Beef",
+                            "quantity": 10
+                        }
+                    ]
                 },
                 "expected": {
                     "outcome": "Sales successful, deduction applied",
@@ -123,27 +134,49 @@
                 }
             },
             {
-                "name": "Invalid Milk Quantity",
-                "description": "Verify that the system handles cases where the milk quantity recorded is invalid.",
+                "name": "Rejected Buy Request",
+                "description": "Verify that a farmer or SME can reject the generated buy request.",
                 "input": {
-                    "milkQuantity": -10,
-                    "salePricePerUnit": 50
+                    "farmer_id": 123456789,
+                    "products": [
+                        {  
+                            "product_id": 23,
+                            "name": "Milk",  
+                            "quantity": 10
+                        },
+                        {    
+                            "product_id": 24,    
+                            "name": "Beef",
+                            "quantity": 2
+                        }
+                    ]
                 },
                 "expected": {
                     "outcome": "Sales failed",
-                    "status": "Invalid quantity"
+                    "status": "Rejected"
                 }
             },
             {
-                "name": "No Milk Sales Recorded",
-                "description": "Verify that the system handles cases where no milk sales are recorded despite the farmer having milk production.",
+                "name": "Not Enough Budget",
+                "description": "Verify that the system handles cases where the total payable amount exceeds the budget of the union.",
                 "input": {
-                    "milkQuantity": 100,
-                    "salePricePerUnit": 0
+                    "farmer_id": 123456789,
+                    "products": [
+                        {  
+                            "product_id": 23,
+                            "name": "Milk",  
+                            "quantity": 10
+                        },
+                        {    
+                            "product_id": 100,    
+                            "name": "Beef",
+                            "quantity": 2
+                        }
+                    ]
                 },
                 "expected": {
                     "outcome": "Sales failed",
-                    "status": "No sales recorded"
+                    "status": "Rejected - Not enough budget"
                 }
             }
         ]
