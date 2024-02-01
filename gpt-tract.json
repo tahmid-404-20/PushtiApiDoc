@@ -375,5 +375,43 @@
                 }
             }
         ]
+    },
+    {
+        "usecase": {
+            "name": "New Product Add",
+            "scenario": "Admin will add new product",
+            "actors": "Admin",
+            "preconditions": "Not applicable",
+            "steps": [
+                "Admin logs in the account.",
+                "Admin adds a new product."
+            ]
+        },
+        "testcases": [
+            {
+                "name": "Successful Product Addition",
+                "description": "Verify that admin can add a new product.",
+                "input": {
+                    "name": "Milk",
+                    "unitPrice": 50,
+                    "taxPercentage": 3
+                },
+                "expected": {
+                    "outcome": "Product addition successful"
+                }
+            },
+            {
+                "name": "Redundant Product Addition",
+                "description": "Verify that the system can avoid redundant product addition.",
+                "input": {
+                    "name": "Milk",
+                    "unitPrice": 50,
+                    "taxPercentage": 3
+                },
+                "expected": {
+                    "outcome": "Product already exists."
+                }
+            }
+        ]
     }
 ]
