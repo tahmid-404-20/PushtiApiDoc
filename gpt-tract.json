@@ -183,6 +183,90 @@
     },
     {
         "usecase": {
+            "name": "Sell Request and Approval",
+            "scenario": "Agent generates a sell request and the vendor or SME approves it.",
+            "actors": "Agnet, Vendor or SME",
+            "preconditions": "Vendor or SME is registered under the agent and he is buying from agent.",
+            "steps": [
+                "Agent inputs the sell items and their quantities",
+                "Agent generates a sell request",
+                "Vendor or SME checks the sell request and approves it"
+            ]
+        },
+        "testcases": [
+            {
+                "name": "Valid Sell Request",
+                "description": "Verify that an agent can successfully generate a sell request and the vendor or SME can approve it.",
+                "input": {
+                    "vendor_id": 123456789,
+                    "products": [
+                        {  
+                            "product_id": 23,
+                            "name": "Milk",  
+                            "quantity": 10
+                        },
+                        {    
+                            "product_id": 24,    
+                            "name": "Beef",
+                            "quantity": 10
+                        }
+                    ]
+                },
+                "expected": {
+                    "outcome": "Sales successful",
+                    "status": "Completed"
+                }
+            },
+            {
+                "name": "Rejected Sell Request",
+                "description": "Verify that a vendor or SME can reject the generated buy request.",
+                "input": {
+                    "vendor_id": 123456789,
+                    "products": [
+                        {  
+                            "product_id": 23,
+                            "name": "Milk",  
+                            "quantity": 10
+                        },
+                        {    
+                            "product_id": 24,    
+                            "name": "Beef",
+                            "quantity": 2
+                        }
+                    ]
+                },
+                "expected": {
+                    "outcome": "Sales failed",
+                    "status": "Rejected"
+                }
+            },
+            {
+                "name": "Not Enough Product in the Inventory",
+                "description": "Verify that the system handles cases where the quantity of an product exceeds the inventory of the union.",
+                "input": {
+                    "vendor_id": 123456789,
+                    "products": [
+                        {  
+                            "product_id": 23,
+                            "name": "Milk",  
+                            "quantity": 10
+                        },
+                        {    
+                            "product_id": 100,    
+                            "name": "Beef",
+                            "quantity": 200
+                        }
+                    ]
+                },
+                "expected": {
+                    "outcome": "Sales failed",
+                    "status": "Rejected - Not enough product"
+                }
+            }
+        ]
+    },
+    {
+        "usecase": {
             "name": "SME Product Purchases and Loans",
             "scenario": "SMEs can buy products, take loans, and sell their products.",
             "actors": "SME, Agent",
