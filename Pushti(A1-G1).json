@@ -4,63 +4,61 @@
             "name": "User Registration",
             "scenario": "Farmers, SMEs or Vendors register in Pushti",
             "actors": "Farmers, SMEs, Vendors",
-            "preconditions": "Farmers, SMEs or vendors must be a Bangladeshi adult citizen.",
+            "preconditions": "Farmers, SMEs or vendors is a Bangladeshi adult citizen.",
             "steps": [
                 "New user chooses account type",
                 "If the user chooses farmer, he also chooses farmer type",
                 "User selects his division, district, upazilla, union",
-                "User gives his other informations like phonen number, email, address.",
+                "User gives his other informations like name, phone number, email, address.",
                 "User gives his preferred password and confirms it",
                 "User submits the form"
             ]
         },
         "testcases": [
             {
-                "name": "Valid Course Selection",
-                "description": "Verify that a student can successfully select and register for valid courses in a semester.",
+                "name": "Valid Information Selection",
+                "description": "Verify that an user can successfully create an account.",
                 "input": {
-                    "selectedCourses": [
-                        "Math101",
-                        "English202",
-                        "History150"
-                    ]
+                    "Name": "John Doe",
+                    "accountType": "Farmer",
+                    "farmerType": "Dairy",
+                    "division": "Sylhet",
+                    "district": "Moulvibazar",
+                    "upazilla": "Kamalganj",
+                    "union": "Fulpur",
+                    "nid": 1234567890,
+                    "phone": "01700000000",
+                    "email": "djohn@gmail.com",
+                    "address": "13/2 Fulpur, Kamalganj, Moulvibazar",
+                    "dob": "01/01/1990",
+                    "password": "123456",
+                    "confirmPassword": "123456"
                 },
                 "expected": {
-                    "outcome": "Registration successful",
-                    "status": "Approved"
+                    "outcome": "Registration successful"
                 }
             },
             {
-                "name": "Empty Course Selection",
-                "description": "Verify that the system handles the case where a student tries to submit an empty course selection.",
+                "name": "Incpmplete Input",
+                "description": "Verify that the system handles the case where a user tries to submit any required field empty.",
                 "input": {
-                    "selectedCourses": []
+                    "Name": "John Doe",
+                    "accountType": "Farmer",
+                    "farmerType": "Dairy",
+                    "division": "Sylhet",
+                    "district": "Moulvibazar",
+                    "upazilla": "Kamalganj",
+                    "union": "Fulpur",
+                    "nid": "",
+                    "phone": "01700000000",
+                    "email": "djohn@gmail.com",
+                    "address": "13/2 Fulpur, Kamalganj, Moulvibazar",
+                    "dob": "01/01/1990",
+                    "password": "123456",
+                    "confirmPassword": "123456"
                 },
                 "expected": {
-                    "outcome": "Registration failed",
-                    "status": "Rejected"
-                }
-            },
-            {
-                "name": "Advisor Approval",
-                "description": "Verify that the advisor can successfully approve a student's registration.",
-                "input": {
-                    "advisorApproval": true
-                },
-                "expected": {
-                    "outcome": "Registration approved",
-                    "status": "Approved"
-                }
-            },
-            {
-                "name": "Advisor Rejection",
-                "description": "Verify that the advisor can reject a student's registration.",
-                "input": {
-                    "advisorApproval": false
-                },
-                "expected": {
-                    "outcome": "Registration rejected",
-                    "status": "Rejected"
+                    "outcome": "Registration failed"
                 }
             }
         ]
