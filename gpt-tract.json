@@ -325,5 +325,55 @@
                 }
             }
         ]
+    },
+    {
+        "usecase": {
+            "name": "Loan Approval",
+            "scenario": "Agent approves the loan from farmer or SME",
+            "actors": "Agent",
+            "preconditions": "Farmer or SME registered under the agent has generated a loan request.",
+            "steps": [
+                "Agent logs in the system and check the pending requests.",
+                "Agent selects an amount inside the requested range.",
+                "Agent approves or rejects the loan."
+            ]
+        },
+        "testcases": [
+            {
+                "name": "Loan Approval",
+                "description": "Verify that an agent can successfully approve a loan request.",
+                "input": {
+                    "approvedAmount": 5000,
+                    "loan_id": 10
+                },
+                "expected": {
+                    "outcome": "Loan approval successful",
+                    "status": "Ongoing"
+                }
+            },
+            {
+                "name": "Loan Rejection",
+                "description": "Verify that an agent can successfully reject a loan request.",
+                "input": {
+                    "loan_id": 10
+                },
+                "expected": {
+                    "outcome": "Loan rejection successful",
+                    "status": "Rejected"
+                }
+            },
+            {
+                "name": "Budget Exceeded",
+                "description": "Verify that the system can stop approval when union budget is exceeded.",
+                "input": {
+                    "approvedAmount": 50000,
+                    "loan_id": 10
+                },
+                "expected": {
+                    "outcome": "Loan approval failed",
+                    "status": "Rejected - Not enough budget"
+                }
+            }
+        ]
     }
 ]
