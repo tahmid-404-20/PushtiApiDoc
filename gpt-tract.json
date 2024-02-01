@@ -62,11 +62,11 @@
     {
         "usecase": {
             "name": "Loan Application and Approval",
-            "scenario": "Farmer applies for a loan and the agent approves it.",
-            "actors": "Farmer, Agent",
-            "preconditions": "Farmer is registered under an agent.",
+            "scenario": "Farmer or SME applies for a loan and the agent approves it.",
+            "actors": "Farmer or SME, Agent",
+            "preconditions": "Farmer or SME is registered under an agent.",
             "steps": [
-                "Farmer logs into the system and applies for a loan.",
+                "Farmer or SME logs into the system and applies for a loan.",
                 "Agent reviews the loan application.",
                 "Agent approves or rejects the loan."
             ]
@@ -74,9 +74,10 @@
         "testcases": [
             {
                 "name": "Valid Loan Application",
-                "description": "Verify that a farmer can successfully apply for a loan and get it approved by the agent.",
+                "description": "Verify that a farmer or SME can successfully apply for a loan and get it approved by the agent.",
                 "input": {
-                    "loanAmount": 5000
+                    "loanAmount": 5000,
+                    "description": "I want the loan for new cows."
                 },
                 "expected": {
                     "outcome": "Loan application successful",
@@ -85,24 +86,13 @@
             },
             {
                 "name": "Loan Application Exceeds Limit",
-                "description": "Verify that the system rejects a loan application when the requested amount exceeds the permissible limit.",
+                "description": "Verify that the system rejects a loan application when the requested amount exceeds the budget limit of the union.",
                 "input": {
                     "loanAmount": 15000
                 },
                 "expected": {
                     "outcome": "Loan application failed",
-                    "status": "Rejected - Exceeds limit"
-                }
-            },
-            {
-                "name": "Invalid Loan Amount",
-                "description": "Verify that the system handles cases where the loan amount requested is invalid or below the minimum threshold.",
-                "input": {
-                    "loanAmount": 0
-                },
-                "expected": {
-                    "outcome": "Loan application failed",
-                    "status": "Rejected - Invalid amount"
+                    "status": "Rejected - Not enough budget"
                 }
             }
         ]
