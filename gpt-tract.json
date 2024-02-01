@@ -1,0 +1,222 @@
+[
+    {
+        "usecase": {
+            "name": "Farmer Registration",
+            "scenario": "A farmer is registered under an agent in the corresponding union parishad.",
+            "actors": "Agent, Farmer",
+            "preconditions": "Agent is appointed at union parishad level.",
+            "steps": [
+                "Farmer approaches the agent for registration.",
+                "Agent collects necessary information from the farmer.",
+                "Agent registers the farmer in the system."
+            ]
+        },
+        "testcases": [
+            {
+                "name": "Valid Farmer Registration",
+                "description": "Verify that a farmer can be successfully registered under an agent with all necessary information provided.",
+                "input": {
+                    "farmerDetails": {
+                        "name": "John Doe",
+                        "address": "Union Parishad 1",
+                        "contact": "0123456789"
+                    }
+                },
+                "expected": {
+                    "outcome": "Registration successful",
+                    "status": "Registered"
+                }
+            },
+            {
+                "name": "Incomplete Farmer Registration",
+                "description": "Verify that the registration fails if the farmer provides incomplete information.",
+                "input": {
+                    "farmerDetails": {
+                        "name": "",
+                        "address": "Union Parishad 1",
+                        "contact": "0123456789"
+                    }
+                },
+                "expected": {
+                    "outcome": "Registration failed",
+                    "status": "Incomplete information"
+                }
+            },
+            {
+                "name": "Duplicate Farmer Registration",
+                "description": "Verify that the system prevents duplicate registrations for the same farmer.",
+                "input": {
+                    "farmerDetails": {
+                        "name": "John Doe",
+                        "address": "Union Parishad 1",
+                        "contact": "0123456789"
+                    }
+                },
+                "expected": {
+                    "outcome": "Registration failed",
+                    "status": "Duplicate detected"
+                }
+            }
+        ]
+    },
+    {
+        "usecase": {
+            "name": "Loan Application and Approval",
+            "scenario": "Farmer applies for a loan and the agent approves it.",
+            "actors": "Farmer, Agent",
+            "preconditions": "Farmer is registered under an agent.",
+            "steps": [
+                "Farmer logs into the system and applies for a loan.",
+                "Agent reviews the loan application.",
+                "Agent approves or rejects the loan."
+            ]
+        },
+        "testcases": [
+            {
+                "name": "Valid Loan Application",
+                "description": "Verify that a farmer can successfully apply for a loan and get it approved by the agent.",
+                "input": {
+                    "loanAmount": 5000
+                },
+                "expected": {
+                    "outcome": "Loan application successful",
+                    "status": "Approved"
+                }
+            },
+            {
+                "name": "Loan Application Exceeds Limit",
+                "description": "Verify that the system rejects a loan application when the requested amount exceeds the permissible limit.",
+                "input": {
+                    "loanAmount": 15000
+                },
+                "expected": {
+                    "outcome": "Loan application failed",
+                    "status": "Rejected - Exceeds limit"
+                }
+            },
+            {
+                "name": "Invalid Loan Amount",
+                "description": "Verify that the system handles cases where the loan amount requested is invalid or below the minimum threshold.",
+                "input": {
+                    "loanAmount": 0
+                },
+                "expected": {
+                    "outcome": "Loan application failed",
+                    "status": "Rejected - Invalid amount"
+                }
+            }
+        ]
+    },
+    {
+        "usecase": {
+            "name": "Milk Production and Sales",
+            "scenario": "Farmer sells milk production and a percentage is deducted from their sold products.",
+            "actors": "Farmer",
+            "preconditions": "Farmer has produced milk and is registered in the system.",
+            "steps": [
+                "Farmer records milk production details in the system.",
+                "Farmer lists milk for sale.",
+                "System calculates and deducts a percentage for repayment."
+            ]
+        },
+        "testcases": [
+            {
+                "name": "Valid Milk Sales",
+                "description": "Verify that a farmer can successfully record, sell milk, and have the appropriate deductions made.",
+                "input": {
+                    "milkQuantity": 100,
+                    "salePricePerUnit": 50
+                },
+                "expected": {
+                    "outcome": "Sales successful, deduction applied",
+                    "status": "Completed"
+                }
+            },
+            {
+                "name": "Invalid Milk Quantity",
+                "description": "Verify that the system handles cases where the milk quantity recorded is invalid.",
+                "input": {
+                    "milkQuantity": -10,
+                    "salePricePerUnit": 50
+                },
+                "expected": {
+                    "outcome": "Sales failed",
+                    "status": "Invalid quantity"
+                }
+            },
+            {
+                "name": "No Milk Sales Recorded",
+                "description": "Verify that the system handles cases where no milk sales are recorded despite the farmer having milk production.",
+                "input": {
+                    "milkQuantity": 100,
+                    "salePricePerUnit": 0
+                },
+                "expected": {
+                    "outcome": "Sales failed",
+                    "status": "No sales recorded"
+                }
+            }
+        ]
+    },
+    {
+        "usecase": {
+            "name": "SME Product Purchases and Loans",
+            "scenario": "SMEs can buy products, take loans, and sell their products.",
+            "actors": "SME, Agent",
+            "preconditions": "SME is registered in the system.",
+            "steps": [
+                "SME logs into the system and browses products.",
+                "SME applies for a loan for business purposes.",
+                "SME sells products through the system."
+            ]
+        },
+        "testcases": [
+            {
+                "name": "Valid SME Loan Application",
+                "description": "Verify that an SME can successfully apply for and be granted a loan.",
+                "input": {
+                    "loanAmount": 10000
+                },
+                "expected": {
+                    "outcome": "Loan application successful",
+                    "status": "Approved"
+                }
+            },
+            {
+                "name": "SME Loan Application Without Registration",
+                "description": "Verify that the system rejects loan applications from SMEs that are not registered.",
+                "input": {
+                    "loanAmount": 5000
+                },
+                "expected": {
+                    "outcome": "Loan application failed",
+                    "status": "Rejected - Not registered"
+                }
+            },
+            {
+                "name": "SME Product Purchase",
+                "description": "Verify that SMEs can successfully purchase products through the system.",
+                "input": {
+                    "product": "Fertilizer",
+                    "quantity": 20
+                },
+                "expected": {
+                    "outcome": "Purchase successful",
+                    "status": "Completed"
+                }
+            },
+            {
+                "name": "Invalid SME Product Purchase",
+                "description": "Verify that the system handles cases where SMEs try to purchase more products than available in stock.",
+                "input": {
+                    "product": "Fertilizer",
+                    "quantity": 1000
+                },
+                "expected": {
+                    "outcome": "Purchase failed",
+                    "status": "Insufficient stock"
+                }
+            }
+        ]
+    }
+]
